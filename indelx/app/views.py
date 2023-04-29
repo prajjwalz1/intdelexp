@@ -356,7 +356,7 @@ def esewa(request):
             'tAmt':total_price,
             'pid': order_id,
             'scd': 'EPAYTEST',
-            'su': 'http://localhost:8000/payment/success',
+            'su': 'http://prajjwalacharya.pythonanywhere.com/payment/success',
             'fu': 'http://localhost:8000/payment/failure',
         }
 
