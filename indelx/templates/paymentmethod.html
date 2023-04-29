@@ -1,0 +1,173 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+{%load static%}
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Checkout || Aboss eCommerce Bootstrap 4 Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="order_id" content="{{order_id}}">
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="{%static 'img/favicon.ico">
+    <!-- Fontawesome css -->
+    <link rel="stylesheet" href="{%static 'css/font-awesome.min.css' %}">
+    <!-- Animate css -->
+    <link rel="stylesheet" href="{%static 'css/animate.css' %}">
+    <!-- Ionicons css -->
+    <link rel="stylesheet" href="{%static 'css/ionicons.min.css' %}">
+    <!-- Nice select css -->
+    <link rel="stylesheet" href="{%static 'css/nice-select.css' %}">
+    <!-- Jquery fancybox css -->
+    <link rel="stylesheet" href="{%static 'css/jquery.fancybox.css' %}">
+    <!-- Jquery ui price slider css -->
+    <link rel="stylesheet" href="{%static 'css/jquery-ui.min.css' %}">
+    <!-- Meanmenu css -->
+    <link rel="stylesheet" href="{%static 'css/meanmenu.min.css' %}">
+    <!-- Owl carousel css -->
+    <link rel="stylesheet" href="{%static 'css/owl.carousel.min.css' %}">
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="{%static 'css/bootstrap.min.css' %}">
+    <!-- Custom css -->
+    <link rel="stylesheet" href="{%static 'css/default.css' %}">
+    <!-- Main css -->
+    <link rel="stylesheet" href="{%static 'css/style.css' %}">
+    <!-- Responsive css -->
+    <link rel="stylesheet" href="{%static 'css/responsive.css' %}">
+
+    <!-- Modernizer js -->
+    <script src="{%static 'js/vendor/modernizr-3.5.0.min.js' %}"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=AWijh9jZ_Qf516SosXhP2yhndm2CN5PmQAz3vXCB0Kob_AEiqhG-Ieeaffw9hTyBGV_6eRAcrYHrdNJD&currency=USD"></script>
+</head>
+
+
+
+<body>
+ <!-- Breadcrumb Area Start Here -->
+        <div class="breadcrumb-area">
+            <div class="container">
+                <ol class="breadcrumb breadcrumb-list">
+                    <li class="breadcrumb-item"><a href="../">Home</a></li>
+                    <li class="breadcrumb-item"><a href="../">Cart</a></li>
+                    <li class="breadcrumb-item active">checkout</li>
+                </ol>
+            </div>
+        </div><br>
+        <!-- Breadcrumb Area End Here -->
+<div class="checkout-area white-bg pb-40">
+            <div class="container">
+                <div class="col-lg-6 col-md-6">
+                        <div class="your-order">
+                            <h3>Your order</h3>
+                            <div class="your-order-table table-responsive">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th class="product-name">Product</th>
+                                            <th class="product-total">Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    {%for item in orders%}
+                                        <tr class="cart_item">
+
+                                            <td class="product-name">
+                                                {{ item.name }} <span class="product-quantity"> × {{ item.quantity }}</span>
+                                            </td>
+                                            <td class="product-total">
+                                                <span class="amount">{{ item.price }}</span>
+                                            </td>
+
+                                        </tr>
+                                    {%endfor%}
+
+                                    </tbody>
+                                    <tfoot>
+                                        <tr class="cart-subtotal">
+                                            <th>Cart Subtotal</th>
+                                            <td><span class="amount">{{ orders.0.order.total_price }}</span></td>
+                                        </tr>
+                                        <tr class="order-total">
+                                            <th>Order Total</th>
+                                            <td><span class=" total amount">{{ orders.0.order.total_price }}</span>
+                                            </td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                            <div class="payment-method">
+                                <div id="accordion">
+                                    <div class="card">
+                                        <div class="card-header" id="headingone">
+                                            <H3 style="text-align: CENTER;">CHOOSE YOUR PAYMENT METHOD
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingtwo">
+                                            <h5 class="mb-0">
+                                                <button class="btn btn-link collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        eSEWA
+                                        </button>
+                                            </h5>
+                                        </div>
+                                        <div id="collapseTwo" class="collapse" aria-labelledby="headingtwo" data-parent="#accordion">
+                                            <div class="card-body">
+                                                <a href="{% url 'esewa' %}?order_id={{ order_id }}">
+                                                     <img src="{%static 'img/logo/esewa_logo.png'%}" alt="Logo">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingthree">
+                                            <h5 class="mb-0">
+                                                <button class="btn btn-link collapsed" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                          PayPal
+                                        </button>
+                                            </h5>
+                                        </div>
+                                        <div id="collapseThree" class="collapse" aria-labelledby="headingthree" data-parent="#accordion">
+                                            <div class="card-body">
+                                                <div id="paypal-button-container"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+ <!-- jquery 3.6.0 -->
+    <!-- jquery 3.6.0 -->
+<script src="{%static 'js/vendor/jquery-3.6.0.min.js' %}"></script>
+<!-- Countdown js -->
+<script src="{%static 'js/jquery.countdown.min.js' %}"></script>
+<!-- Mobile menu js -->
+<script src="{%static 'js/jquery.meanmenu.min.js' %}"></script>
+<!-- ScrollUp js -->
+<script src="{%static 'js/jquery.scrollUp.js' %}"></script>
+<!-- Fancybox js -->
+<script src="{%static 'js/jquery.fancybox.min.js' %}"></script>
+<!-- Jquery nice select js -->
+<script src="{%static 'js/jquery.nice-select.min.js' %}"></script>
+<!-- Jquery ui price slider js -->
+<script src="{%static 'js/jquery-ui.min.js' %}"></script>
+<!-- Owl carousel -->
+<script src="{%static 'js/owl.carousel.min.js' %}"></script>
+<!-- Bootstrap popper js -->
+<script src="{%static 'js/popper.min.js' %}"></script>
+<!-- Bootstrap js -->
+<script src="{%static 'js/bootstrap.min.js' %}"></script>
+<!-- Plugin js -->
+<script src="{%static 'js/plugins.js' %}"></script>
+<!-- Main activaion js -->
+<script src="{%static 'js/main.js' %}"></script>
+<script src="{%static 'js/payment-method.js' %}"></script>
+<script>
+
+    </script>
+
+
+</html>

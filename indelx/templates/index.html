@@ -1,0 +1,388 @@
+{% extends 'base.html' %}
+{%load static%}
+{% block content %}
+
+
+    <!-- Main Header Area End Here -->
+    <!-- Slider Area Start Here -->
+    <div class="slider-activation owl-carousel">
+        <!-- Start Single Slide -->
+        <div style="background-image: url('{{ slide.0.image.url }}');" class="slide align-center-left fullscreen animation-style-01 bg-image-1 ">
+            <div class="slider-progress"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="slider-content">
+
+                            <h2>Bring nepal to your doorstep!</h2>
+                            <p></p>
+                            <div class="slide-btn">
+                                <a href="">Shop Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Single Slide -->
+        <!-- Start Single Slide -->
+        <div style="background-image: url('{{ slide.1.image.url }}');" class="slide align-center-left fullscreen animation-style-02 bg-image-2">
+            <div class="slider-progress"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="slider-content">
+                            <h1>BUY</h1>
+                            <h2>Unique Handicraft From Nepal</h2>
+
+                            <div class="slide-btn">
+                                <a href="">Shop Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Single Slide -->
+    </div>
+
+    <!-- Slider Area End Here -->
+    <!-- Featured Product Area Start Here -->
+    <div class="main-featured-area mtm-30">
+        <div class="container">
+
+            <!-- Featured Banner End -->
+            <!-- Featured Banner Start -->
+
+
+            <!-- Featured Hero Banner Start -->
+
+
+            <div class="row mb-80">
+
+            </div>
+
+            <!-- Featured Banner End -->
+
+
+            <div class="deal-product mtm-80">
+                <div class="container">
+                    <!-- Section Title Start -->
+                    <div class="section-title text-center mb-50">
+                        <h2>Deal of the day</h2>
+                        <p>This offers is only available for certain period of time</p>
+                    </div>
+                    <!-- Section Title End -->
+                    <!-- Deal Product Activaion Start -->
+
+                    <div class="deal-pro-active owl-carousel">
+                        {%for product in product%}
+                        <!-- Single Product Start -->
+                        <div class="single-aboss-product clearfix">
+                            <div class="pro-img">
+                                <a href="product-details.html"><img src="{{product.image.url}}" alt="product-img"></a>
+                                <span class="sticker-new">new</span>
+                                <div class="pro-actions">
+                                    <a data-bs-toggle="modal" data-bs-target="#productModals"
+                                       data-button_product_id={{product.id}} class="quick-view btn_quick-view">quick
+                                        view</a>
+                                    <a class="add-cart add-cart-button" data-image={{product.image.url}}
+                                       data-name={{product.pname}} data-price={{product.discounted_price}}
+                                       data-product_id={{product.id}}>add to cart</a>
+                                </div>
+                            </div>
+                            <div class="pro-content">
+                                <h4><a href="product-details.html">{{product.pname}}</a></h4>
+                                <div class="rating">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                </div>
+                                <p><span class="prev-price">$30.50</span><span class="price">$28.98</span></p>
+                                <p>Long printed dress with thin adjustable straps. V-neckline and wiring under the bust
+                                    with ruffles at the bottom of the dress.</p>
+                                <div class="countdown d-flex flex-wrap mt-30" data-countdown="2020/07/01"></div>
+                            </div>
+                        </div>
+                        {%endfor%}
+                    </div>
+
+                    <!-- Deal Product Activaion End -->
+                </div>
+                <!-- Container End -->
+
+
+                <br>
+                <div class="section-title text-center mb-50">
+                    <h2>featured products</h2>
+                    <p>Trending Nepali products all over the world</p>
+                </div>
+                <!-- Section Title End -->
+                <!-- Featured Product Activation Start -->
+                <div class="featured-pro-active border-hover-effect owl-carousel">
+                    {%for product in product%}
+                    <!-- Single Product Start -->
+                    <div class="single-aboss-product">
+                        <div class="pro-img">
+                            <a href="{%url 'productdetails' product.id%}"><img src="{{product.image.url}}"
+                                                                               alt="product-img"></a>
+                            <span class="sticker-new">new</span>
+                            <div class="pro-actions">
+                                <a id=button_quickview data-bs-toggle="modal" data-bs-target="#productModals"
+                                   data-button_product_id={{product.id}} class="quick-view btn_quick-view">quick
+                                    view</a>
+                                <a id="add-to-cat" class="add-cart add-cart-button" data-image={{product.image.url}}
+                                   data-name={{product.pname}} data-price={{product.discounted_price}}
+                                   data-product_id={{product.id}}>add to cart</a>
+                            </div>
+                        </div>
+                        <div class="pro-content">
+                            <h4><a href="product-details.html">{{product.pname}}</a></h4>
+                            <div class="rating">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                            </div>
+                            <p><span class="prev-price">${{product.selling_price}}</span><span class="price">${{product.discounted_price}}</span>
+                            </p>
+                        </div>
+                    </div>
+                    {%endfor%}
+                </div>
+                <!-- +++
+                    +++
+                    ++++
+                    +++++
+                    +++
+                    +++
+                    ++++
+                    +++++
+
+                 -->
+
+
+                <!-- //modal ends here   -->
+
+
+                <!-- Featured Hero Banner End -->
+                <!-- Section Title Start -->
+
+
+                <!-- Single Product End -->
+                <!-- Single Product Start -->
+
+                <!-- Single Product End -->
+            </div>
+
+            <!-- Featured Product Activation End -->
+        </div>
+        <!-- Container End -->
+    </div>
+    <!-- Featured Product Area End Here -->
+    <!-- Professional Banner Start Here -->
+</div>
+
+<!-- Subscribe Area End Here -->
+<!-- Online Support Area Start Here -->
+<div class="online-support">
+    <div class="container">
+        <div class="row">
+            <!-- Single Support Start -->
+            <div class="col-lg-4">
+                <div class="single-support mb-all-30">
+                    <div class="support-img">
+                        <img src="{%static 'img/icons/s1.png' %}" alt="support-img">
+                    </div>
+                    <div class="support-desc">
+                        <h4>Free delivery</h4>
+                        <p>we dont charge you extra for delivery above $300</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Single Support End -->
+            <!-- Single Support Start -->
+            <div class="col-lg-4">
+                <div class="single-support mb-all-30">
+                    <div class="support-img">
+                        <img src="{%static 'img/icons/s2.png' %}" alt="support-img">
+                    </div>
+                    <div class="support-desc">
+                        <h4>money guarantee</h4>
+                        <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Single Support End -->
+            <!-- Single Support Start -->
+            <div class="col-lg-4">
+                <div class="single-support">
+                    <div class="support-img">
+                        <img src="{%static 'img/icons/s3.png' %}" alt="support-img">
+                    </div>
+                    <div class="support-desc">
+                        <h4>online support</h4>
+                        <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Single Support End -->
+        </div>
+    </div>
+</div>
+<!-- Online Support Area End Here -->
+<!-- Footer Area Start Here -->
+
+<!-- Footer Area End Here -->
+
+
+<!-- Quick View Content Start -->
+<div class="main-product-thumbnail quick-thumb-content">
+    <div class="container">
+        <!-- The Modal -->
+        <div class="modal fade" id="productModals">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <button type="button" id="productModalss" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="row">
+                            <!-- Main Thumbnail Image Start -->
+                            <div class="col-lg-6 col-md-6 mb-all-40">
+                                <!-- Thumbnail Large Image start -->
+                                <div class="tab-content">
+                                    <div id="pro-1" class="tab-pane fade show active">
+                                        <a data-fancybox="images" href="img/products/p-3.jpg"><img
+                                                src="{{data.image}}" alt="product-view" id="quick_view_image"></a>
+                                    </div>
+                                    <div id="pro-2" class="tab-pane fade">
+                                        <a data-fancybox="images" href="img/products/p5.jpg"><img
+                                                src="img/products/p5.jpg" alt="product-view"></a>
+                                    </div>
+                                    <div id="pro-3" class="tab-pane fade">
+                                        <a data-fancybox="images" href="img/products/p7.jpg"><img
+                                                src="img/products/p7.jpg" alt="product-view"></a>
+                                    </div>
+                                    <div id="pro-4" class="tab-pane fade">
+                                        <a data-fancybox="images" href="img/products/p2.jpg"><img
+                                                src="img/products/p2.jpg" alt="product-view"></a>
+                                    </div>
+                                </div>
+                                <!-- Thumbnail Large Image End -->
+                                <!-- Thumbnail Image End -->
+                                <div class="product-thumbnail">
+                                    <div class="thumb-menu owl-carousel nav tabs-area" role="tablist">
+                                        <a class="active" data-bs-toggle="tab" href="#pro-1"><img
+                                                src="img/thumbail/t1.jpg" alt="product-thumbnail"></a>
+                                        <a data-bs-toggle="tab" href="#pro-2"><img src="img/thumbail/t2.jpg"
+                                                                                   alt="product-thumbnail"></a>
+                                        <a data-bs-toggle="tab" href="#pro-3"><img src="img/thumbail/t3.jpg"
+                                                                                   alt="product-thumbnail"></a>
+                                        <a data-bs-toggle="tab" href="#pro-4"><img src="img/thumbail/t4.jpg"
+                                                                                   alt="product-thumbnail"></a>
+                                    </div>
+                                </div>
+                                <!-- Thumbnail image end -->
+                            </div>
+                            <!-- Main Thumbnail Image End -->
+                            <!-- Thumbnail Description Start -->
+                            <div class="col-lg-6 col-md-6">
+                                <div class="thubnail-desc fix">
+                                    <h3 class="modal-title">{{data.name}}</h3>
+                                    <ul class="rating-summary">
+                                        <li class="rating-pro">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </li>
+                                        <li class="read-review"><a href="#">read reviews (1)</a></li>
+                                        <li class="write-review"><a href="#">write review</a></li>
+                                    </ul>
+                                    <div class="pro-price mt-10">
+                                        <p class="d-flex align-items-center">Npr.<span class="modal-prev-price">{{data.selling_price}}</span><span
+                                                class="modal-new-price">Npr.{{data.discounted_price}}</span><span
+                                                class="saving-price">-5%</span></p>
+
+                                    </div>
+                                    <p class="pro-desc-details modal-description">{{data.description}}</p>
+                                    <div class="product-size mtb-30 clearfix">
+                                        <label>Size</label>
+                                        <select class="">
+                                            <option>S</option>
+                                            <option>M</option>
+                                            <option>L</option>
+                                        </select>
+                                    </div>
+                                    <div class="color clearfix mb-30">
+                                        <label>color</label>
+                                        <ul class="color-list">
+                                            <li>
+                                                <a class="white" href="#"></a>
+                                            </li>
+                                            <li>
+                                                <a class="orange active" href="#"></a>
+                                            </li>
+                                            <li>
+                                                <a class="paste" href="#"></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="quatity-stock">
+                                        <label>Quantity</label>
+                                        <ul class="d-flex flex-wrap  align-items-center">
+                                            <li class="box-quantity">
+                                                <form action="#">
+
+                                                    <input class="quantity" id="'item-quantity" type="number"
+                                                           min="1" value="1">
+                                                </form>
+                                            </li>
+                                            <li>
+                                                <button id="add-to-cart-button" class="pro-cart"
+                                                        onclick="addToCart({{ item.id }}, $('#item-quantity').val())">
+                                                    add to cart
+                                                </button>
+                                            </li>
+                                            <li class="pro-ref">
+                                                <p><span class="in-stock"><i
+                                                        class="ion-checkmark-round"></i> in stock</span>
+                                                </p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="social-sharing mt-30">
+                                        <ul>
+                                            <li><label>share</label></li>
+                                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                            </li>
+                                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                            </li>
+                                            <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                                            </li>
+                                            <li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Thumbnail Description End -->
+                        </div>
+                    </div>
+                    <!-- Modal footer -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}
+<!-- Main Wrapper End Here -->
+

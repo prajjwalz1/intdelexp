@@ -1,0 +1,320 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+{%load static%}
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+     <title>{% block title %}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="csrf-token" content="{{ csrf_token}}">
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- Fontawesome css -->
+    <link rel="stylesheet" href="{%static 'css/font-awesome.min.css' %}">
+    <!-- Animate css -->
+    <link rel="stylesheet" href="{%static 'css/animate.css' %}">
+    <!-- Ionicons css -->
+    <link rel="stylesheet" href="{%static 'css/ionicons.min.css' %}">
+    <!-- Nice select css -->
+    <link rel="stylesheet" href="{%static 'css/nice-select.css' %}">
+    <!-- Jquery fancybox css -->
+    <link rel="stylesheet" href="{%static 'css/jquery.fancybox.css' %}">
+    <!-- Jquery ui price slider css -->
+    <link rel="stylesheet" href="{%static 'css/jquery-ui.min.css' %}">
+    <!-- Meanmenu css -->
+    <link rel="stylesheet" href="{%static 'css/meanmenu.min.css' %}">
+    <!-- Owl carousel css -->
+    <link rel="stylesheet" href="{%static 'css/owl.carousel.min.css' %}">
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="{%static 'css/bootstrap.min.css' %}">
+    <!-- Custom css -->
+    <link rel="stylesheet" href="{%static 'css/default.css' %}">
+    <!-- Main css -->
+    <link rel="stylesheet" href="{%static 'css/style.css' %}">
+    <!-- Responsive css -->
+    <link rel="stylesheet" href="{%static 'css/responsive.css' %}">
+    <link rel="stylesheet" href="{%static 'css/slider.css' %}">
+
+    <!-- Modernizer js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <script src="{%static 'js/vendor/jquery-3.6.0.min.js' %}"></script>
+    <script src="{%static 'js/vendor/modernizr-3.5.0.min.js' %}"></script>
+
+
+
+</head>
+
+
+<body>
+<!--[if lte IE 9]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade
+    your browser</a> to improve your experience and security.</p>
+<![endif]-->
+
+<!-- Main Wrapper Start Here -->
+<div class="wrapper body-bg">
+    <!-- Newsletter Popup Start -->
+    <div class="popup_wrapper">
+        <div class="test  bg-image-7">
+            <span class="popup_off"><i class="fa fa-times-circle" aria-hidden="true"></i></span>
+            <div class="subscribe_area text-center mt-50">
+                <h2>E-commerce</h2>
+                <p>Subscribe to our e-commerce platform now and stay up-to-date with new collections
+                <div class="subscribe-form-group">
+                    <form action="#">
+                        <input autocomplete="off" type="text" name="message" id="message"
+                               placeholder="Enter your email address">
+                        <button type="submit">subscribe</button>
+                    </form>
+                </div>
+                <div class="subscribe-bottom mt-15">
+                    <input type="checkbox" id="newsletter-permission">
+                    <label for="newsletter-permission">Don't show this popup again</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Newsletter Popup End -->
+    <!-- Main Header Area Start Here -->
+    <header class="absolute-header">
+        <!-- Header Top Start Here -->
+
+        <!-- Header Top End Here -->
+        <!-- Header Bottom Start Here -->
+        <div style="background-color:#16bdbd; " class="header-bottom header-sticky">
+            <div class="container">
+                <div class="main-header">
+                    <div class="row">
+                        <!-- Logo Start Here -->
+                        <div class="col-xl-3 col-lg-2 col-md-2 col-sm-3 col-4">
+                            <div class="logo">
+                                <a href="{%url 'home'%}"><img src="{%static 'img/logo/logo.png' %}" alt="brand-image"></a>
+                            </div>
+                        </div>
+                        <!-- Logo End Here -->
+                        <!-- Header Menu & Cart Area Start Here -->
+                        <div class="col-xl-9 col-lg-10 col-md-10 col-sm-9 col-8">
+                            <div class="maain-menu-area position-relative d-flex justify-content-lg-between justify-content-end">
+                                <!-- Primary Menu Start -->
+                                <div class="primary-menu d-none d-lg-block">
+                                    <nav>
+                                        <ul class="primary-menu-list d-flex">
+                                            <li class="active"><a href="{%url 'home'%}">home</a>
+
+
+                                            </li>
+                                            <li class="active"><a href="#">Products</a>
+
+                                            </li>
+                                            <li class="active"><a href="#">blogs</a>
+                                            </li>
+                                            <li class="active"><a href="#">Contact</a>
+                                            </li>
+
+
+                                            <!-- Primary Menu End -->
+                                            <!-- Cart & Search Area Start -->
+
+
+                                            </li>
+                                            <li style=" margin-left:120px;"><a href="{%url 'login'%}">LOGIN</a>
+                                            <li><a id="logout-button" href="#">LOGOUT</a></li>
+
+
+                                            <!--                                    <li class="active"><a href="{%url 'login'%}"><button type="button" class="btn btn-primary border-0">Login</button></a></li>-->
+                                            <!--                                    <li><button type="button"  id="logout-button" class="btn btn-primary border-0">Logout</button></li>-->
+                                            <div class="search-cart-area pr-all-50">
+                                                <ul class="d-flex">
+
+                                                    <li><a href="#"><img src="{%static 'img/icons/cart.png' %}"
+                                                                         alt="cart-img"><span
+                                                            id="cart-length"></span></a>
+                                                        <!-- Cart Box Start -->
+                                                        <ul class="ht-dropdown cart-box-width">
+                                                            <!-- Single Cart Box Start -->
+                                                            <div id="cart-list">
+
+                                                            </div>
+
+
+                                                            <!-- Single Cart Box End -->
+                                                            <!-- Cart Footer Inner Start -->
+                                                            <li class="cart-footer">
+                                                                <ul class="price-content">
+                                                                    <li>Subtotal <span id="sub-total"></span></li>
+                                                                    <li>Shipping <span>Free</span></li>
+                                                                    <li>Taxes <span>0.00</span></li>
+                                                                    <li>Total <span id="cart-total"></span></li>
+                                                                </ul>
+                                                                <div class="cart-actions text-center">
+                                                                    <a class="cart-checkout"
+                                                                       href="{%url 'checkout' %}">Checkout</a>
+                                                                </div>
+                                                            </li>
+                                                            <!-- Cart Footer Inner End -->
+                                                        </ul>
+                                                        <!-- Cart Box End -->
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <li>{% if user_email %}
+                                            <li style="color:white; font-size:10px; margin-left:10px;"> {{ user_email}}!
+
+                                            </li>
+
+                                            {% endif %}
+                                        </ul>
+                                    </nav><!-- Cart & Search Area End -->
+                                </div>
+                            </div>
+                            <!-- Header Menu & Cart Area End Here -->
+                        </div>
+                        <!-- Mobile Menu Start -->
+                        <div class="mobile-menu d-block d-lg-none">
+                            <nav>
+                                <ul>
+                                    <li><a href="">home</a>
+                                        <!-- Home Version Dropdown Start -->
+
+                                        <!-- Home Version Dropdown End -->
+                                    </li>
+
+                                    <li><a href="#">shop</a></li>
+                                    <!-- Mobile Menu Dropdown Start -->
+
+                                    <!-- Mobile Menu Dropdown End -->
+
+                                    <li><a href="#">Blogs</a></li>
+
+
+                                    <li><a href="#">Contact Us</a></li>
+                                    <li><a href="{%url 'login'%}">login</a></li>
+
+
+                                    <!-- Mobile Menu Dropdown Start -->
+
+                                    <!-- Mobile Menu Dropdown End -->
+
+
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- Mobile Menu End -->
+                    </div>
+                </div>
+                <!-- Container End -->
+            </div>
+        </div>
+    </header>
+</div>
+</body>
+        <!-- Header Bottom End Here -->
+{% block content %}{% endblock %}
+
+<footer class="footer-area dark-blue-bg ptb-80 mtm-80">
+    <div class="footer-top">
+        <div class="container">
+            <div class="row mt-80">
+                <!-- Single Footer Start Here -->
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="single-footer mb-all-40">
+                        <div class="footer-logo mb-30">
+                            <a href="{%url 'home'%}"><img src="{%static 'img/logo/logo.png' %}" alt="logo-image"></a>
+                        </div>
+                        <div class="footer-content">
+                            <p>Welcome to the one of the world's best known company in the industry! We are
+                                committed to the highest quality, reliability, responsibility, continuous
+                                improvement and strive to build long-term relationships with our clients.</p>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Footer End Here -->
+                <!-- Single Footer Start Here -->
+                <div class="col-lg-2 col-md-6 col-sm-6">
+                    <div class="single-footer mb-sm-40">
+                        <div class="footer-content">
+                            <h3>Products</h3>
+                            <ul class="footer-list">
+                                <li><a href="#">Hemp Bags</a></li>
+                                <li><a href="#">Thanka Paintings</a></li>
+                                <li><a href="#">Singing Bowl</a></li>
+                                <li><a href="#">Nepali Handicraft</a></li>
+                                <li><a href="#">Cultural Dresses</a></li>
+                                <li><a href="#">Others</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Footer End Here -->
+                <!-- Single Footer Start Here -->
+
+                <!-- Single Footer End Here -->
+                <!-- Single Footer Start Here -->
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="single-footer">
+                        <div class="footer-content text-lg-right">
+                            <h4>follow us</h4>
+                            <ul class="social-footer d-flex justify-content-lg-end mb-40">
+                                <li><a href="https://www.facebook.com/profile.php?id=100091675281447"><i
+                                        class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+
+                                <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                            </ul>
+                            <h4>Payment Methods</h4>
+                            <a href="#"><img class="img" src="{%static 'img/footer/payment.png' %}"
+                                             alt="payment-image"></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Footer End Here -->
+            </div>
+            <!-- Row End -->
+        </div>
+    </div>
+    <!-- Footer Top End -->
+    <div class="footer-bottom pt-30 ">
+        <div class="container">
+            <div class="copyright text-center text-md-start">
+                <p class="copyright-text">© Consign Solutions Pvt Ltd </p>
+            </div>
+        </div>
+    </div>
+    <!-- Footer Bottom End -->
+</footer>
+
+
+<!-- jquery 3.6.0 -->
+<script src="{%static 'js/vendor/jquery-3.6.0.min.js' %}"></script>
+<!-- Countdown js -->
+<script src="{%static 'js/jquery.countdown.min.js' %}"></script>
+<!-- Mobile menu js -->
+<script src="{%static 'js/jquery.meanmenu.min.js' %}"></script>
+<!-- ScrollUp js -->
+<script src="{%static 'js/jquery.scrollUp.js' %}"></script>
+<!-- Fancybox js -->
+<script src="{%static 'js/jquery.fancybox.min.js' %}"></script>
+<!-- Jquery nice select js -->
+<script src="{%static 'js/jquery.nice-select.min.js' %}"></script>
+<!-- Jquery ui price slider js -->
+<script src="{%static 'js/jquery-ui.min.js' %}"></script>
+<!-- Owl carousel -->
+<script src="{%static 'js/owl.carousel.min.js' %}"></script>
+<!-- Bootstrap popper js -->
+<script src="{%static 'js/popper.min.js' %}"></script>
+<!-- Bootstrap js -->
+<script src="{%static 'js/bootstrap.min.js' %}"></script>
+<!-- Plugin js -->
+<script src="{%static 'js/plugins.js' %}"></script>
+<script src="{%static 'js/custom.js' %}"></script>
+<!-- Main activaion js -->
+<script src="{%static 'js/main.js' %}"></script>
+<script src="{%static 'js/quickview-logout.js' %}"></script>
+<script src="{%static 'js/cart.js' %}"></script>
+
+<script src="{%static 'js/autocomplete.js' %}"></script>
+
+</body>
+
+</html>

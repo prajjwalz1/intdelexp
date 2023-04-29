@@ -1,0 +1,35 @@
+.check-button{
+    position: relative;
+    border: 2px solid transparent;
+    height: 40px;
+    padding: 0 30px;
+    background-color: #16bdbd;
+    color: #FFF;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: 40px;
+    transition: 0.2s all;
+    }
+    .check-button:hover{
+    background-color: #FFF;
+    color:#16bdbd;
+    border-color: #16bdbd;
+    padding: 0px 30px 0px 50px;
+    cursor: pointer;
+    }
+    .check-button>i {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    line-height: 38px;
+    color: #D10024;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s all;
+    }
+    .check-button:hover>i {
+    opacity: 1;
+    visibility: visible;
+    }

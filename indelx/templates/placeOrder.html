@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delivery Address Form</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .delivery-form {
+            flex: 1;
+            margin-right: 20px;
+        }
+        .payment-form {
+            flex-basis: 30%;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container mt-5">
+    <div class="delivery-form">
+        <h1>Enter Delivery Address</h1>
+        <form id="delivery-form">
+            <div class="form-group col-md-6">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="delivery-address">Address:</label>
+                <textarea class="form-control" id="delivery-address" name="address" rows="1" required></textarea>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="country">Country</label>
+                <input type="text" class="form-control" id="country" name="country" required>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="phone-number">Phone Number</label>
+                <input type="text" class="form-control" id="phone-number" name="phone" required>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="city">City:</label>
+                <input type="text" class="form-control" id="city" name="city" required>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="state">State:</label>
+                <input type="text" class="form-control" id="state" name="state" required>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="zip">Zip Code:</label>
+                <input type="text" class="form-control" id="zip" name="zip" required>
+            </div>
+
+                <h1>Select Payment option:</h1>
+
+                    <div class="form-group">
+                        <select name="payment_option" id="payment-option" class="form-control">
+                            <option value="eSEWA">eSEWA</option>
+                            <option value="KHALTI">Paypal</option>
+                        </select>
+                    </div>
+
+
+
+
+            <button type="submit" class="btn btn-primary">Proceed To payment</button>
+        </form>
+    </div>
+
+
+</div>
+
+<!-- jQuery and Bootstrap JS -->
+<script src="{% static 'js/checkout.js' %}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<script>
+    console.log('{{csrf_token}}');
+    $(document).ready(function() {
+const deliveryForm = document.querySelector("#delivery-form");
+
+// listen for form submission
+deliveryForm.addEventListener("submit", function(event) {
+  event.preventDefault(); // prevent the form from submitting
+
+  // get the form data
+  const formData = new FormData(event.target);
+
+  // convert the form data to an object
+  const deliveryDetails = Object.fromEntries(formData.entries());
+
+
+  // get the cart items from localStorage
+  const cartItems = JSON.parse(localStorage.getItem("cartItems"));
+
+
+  // create the data to send in the AJAX request
+
+ console.log(deliveryDetails);
+ console.log(cartItems);
+
+
+
+  // send an AJAX request to the /payments/ URL
+  $.ajax({
+    url: "/payments/",
+    type: "POST",
+    data: JSON.stringify({cartItems: cartItems,deliveryDetails: deliveryDetails}),
+
+headers: {
+              'Content-Type': 'application/json',
+              'X-CSRFToken': '{{ csrf_token }}',
+            },
+    success: function(response) {
+      console.log(response); // log the response from the server
+<!--      localStorage.removeItem("cartItems");-->
+      localStorage.removeItem("deliveryDetails");// remove cartItems from localStorage
+
+      var order_id = response.order_id;
+      var total_price = response.total_price;
+      var payment_option = response.payment_option;
+      if ( payment_option === 'eSEWA') {
+        window.location.href = "/esewa/?order_id=" + order_id ; // redirect to eSewa payment portal
+      } else {
+        window.location.href = "/paypal/?order_id=" + order_id ; // redirect to eSewa payment portal
+      }
+    },
+    error: function(xhr, status, error) {
+      console.error(error); // log any errors to the console
+    },
+  });
+});
+});
+
+
+</script>
+<script src="https://www.paypal.com/sdk/js?client-id=test&currency=USD"></script>
+    <!-- Set up a container element for the button -->
+
+
+</body>
+</html>

@@ -1,0 +1,304 @@
+{%extends 'base.html'%}
+<!--<!doctype html>-->
+<!--<html class="no-js" lang="zxx" xmlns="http://www.w3.org/1999/html">-->
+<!--{%load static%}-->
+<!--<head>-->
+<!--    <meta charset="utf-8">-->
+<!--    <meta http-equiv="x-ua-compatible" content="ie=edge">-->
+<!--    <title>Cart || Aboss eCommerce Bootstrap 4 Template</title>-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
+<!--    <meta name="csrf-token" content="{{ csrf_token}}">-->
+<!--    &lt;!&ndash; Favicons &ndash;&gt;-->
+<!--    <link rel="shortcut icon" href="{%static 'img/favicon.ico' %}">-->
+<!--    &lt;!&ndash; Fontawesome css &ndash;&gt;-->
+<!--    <link rel="stylesheet" href="{%static 'css/font-awesome.min.css' %}">-->
+<!--    &lt;!&ndash; Animate css &ndash;&gt;-->
+<!--    <link rel="stylesheet" href="{%static 'css/animate.css' %}">-->
+<!--    &lt;!&ndash; Ionicons css &ndash;&gt;-->
+<!--    <link rel="stylesheet" href="{%static 'css/ionicons.min.css' %}">-->
+<!--    &lt;!&ndash; Nice select css &ndash;&gt;-->
+<!--    <link rel="stylesheet" href="{%static 'css/nice-select.css' %}">-->
+<!--    &lt;!&ndash; Jquery fancybox css &ndash;&gt;-->
+<!--    <link rel="stylesheet" href="{%static 'css/jquery.fancybox.css' %}">-->
+<!--    &lt;!&ndash; Jquery ui price slider css &ndash;&gt;-->
+<!--    <link rel="stylesheet" href="{%static 'css/jquery-ui.min.css' %}">-->
+<!--    &lt;!&ndash; Meanmenu css &ndash;&gt;-->
+<!--    <link rel="stylesheet" href="{%static 'css/meanmenu.min.css' %}">-->
+<!--    &lt;!&ndash; Owl carousel css &ndash;&gt;-->
+<!--    <link rel="stylesheet" href="{%static 'css/owl.carousel.min.css' %}">-->
+<!--    &lt;!&ndash; Bootstrap css &ndash;&gt;-->
+<!--    <link rel="stylesheet" href="{%static 'css/bootstrap.min.css' %}">-->
+<!--    &lt;!&ndash; Custom css &ndash;&gt;-->
+<!--    <link rel="stylesheet" href="{%static 'css/default.css' %}">-->
+<!--    &lt;!&ndash; Main css &ndash;&gt;-->
+<!--    <link rel="stylesheet" href="{%static 'css/style.css' %}">-->
+<!--    &lt;!&ndash; Responsive css &ndash;&gt;-->
+<!--    <link rel="stylesheet" href="{%static 'css/responsive.css' %}">-->
+<!--    <link rel="stylesheet" href="{%static 'css/deliveryform.css' %}">-->
+<!--    <link rel="stylesheet" href="{%static 'css/custombutton.css' %}">-->
+
+
+<!--    &lt;!&ndash; Modernizer js &ndash;&gt;-->
+<!--    <script src="{%static 'js/vendor/modernizr-3.5.0.min.js' %}"></script>-->
+<!--    <script src="{%static 'js/vendor/jquery-3.6.0.min.js' %}"></script>-->
+<!--    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>-->
+
+<!--    <style>-->
+<!--    .container {-->
+<!--    display: flex;-->
+<!--    justify-content: space-between;-->
+<!--    align-items: flex-start;-->
+<!--    }-->
+<!--    .cart_totals {-->
+<!--    flex: 1;-->
+<!--    margin-right: 20px;-->
+<!--    }-->
+<!--    .payment-form {-->
+<!--    flex-basis: 30%;-->
+<!--    }-->
+
+
+
+
+
+
+<!--    </style>-->
+
+
+
+<!--</head>-->
+
+
+{%block content%}
+<link rel="stylesheet" href="{%static 'css/custombutton.css' %}">
+<div class="breadcrumb-area">
+        <div class="container">
+            <ol class="breadcrumb breadcrumb-list">
+                <li class="breadcrumb-item"><a href="{%url 'home' %}">Home</a></li>
+                <li class="breadcrumb-item active">cart</li>
+            </ol>
+        </div>
+    </div>
+<body>
+
+    <!-- Main Header Area End Here -->
+    <!-- Breadcrumb Area Start Here -->
+
+    <!-- Breadcrumb Area End Here -->
+    <!-- Cart Main Area Start -->
+
+    <div class="cart-main-area white-bg ptb-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <!-- Form Start -->
+                    <form action="#">
+                        <!-- Table Content Start -->
+                        <div class="table-content table-responsive mb-45">
+                            <table>
+                                <thead id="cart-list-detail">
+                                <tr>
+                                    <th class="product-thumbnail">Image</th>
+                                    <th class="product-name">Product</th>
+                                    <th class="product-price">Price</th>
+                                    <th class="product-quantity">Quantity</th>
+                                    <th class="product-subtotal">Total</th>
+                                    <th class="product-remove">Remove</th>
+                                </tr>
+                                </thead>
+
+
+                            </table>
+                        </div>
+                        <!-- Table Content Start -->
+
+
+                        <!-- Cart Button Start -->
+                        <!-- Cart Totals Start -->
+
+                        <div class=" container col-md-4 col-sm-12">
+                            <div class="cart_totals float-md-right text-md-right">
+                                <h2>Cart Totals</h2>
+                                <br/>
+                                <table class="float-md-right">
+                                    <tbody>
+                                    <tr class="cart-subtotal">
+                                        <th>Subtotal</th>
+                                        <td><span class="amount" id="sub-price"></span></td>
+                                    </tr>
+                                    <tr class="order-total">
+                                        <th>Total</th>
+                                        <td>
+                                            <strong><span class="checkoutamount" id="total-price"></span></strong>
+
+                                        </td>
+                                    <tr>
+
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+
+
+                                <div class="check-out">
+                                    <button class="check-button" onclick="checkout()">
+                                        PROCEED TO CHECKOUT
+                                    </button>
+                                </div>
+
+
+
+                            </div>
+
+                        </div>
+                        <!-- Cart Totals End -->
+
+                        <!-- Row End -->
+                    </form>
+
+                    <!-- Form End -->
+                </div>
+            </div>
+            <!-- Row End -->
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="formmodal" tabindex="-1" role="dialog" aria-labelledby="productModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="container">
+                    <h1 class="text-center">Delivery Address Form</h1>
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputFullName">Full Name</label>
+                                <input type="text" class="form-control" id="inputFullName" placeholder="Full Name">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="Phonenumber">Phone Number</label>
+                                <input type="text" placeholder="Phone Number" class="form-control" id="Phonenumber">
+                            </div>
+
+
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label for="input-country">Country</label>
+                                <input type="text" class="form-control" placeholder="Country"
+                                       list="autocomplete-dropdown" id="input-country">
+                                <datalist id="autocomplete-dropdown">
+
+                                </datalist>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputCity">City</label>
+                                <input type="text" class="form-control" id="inputCity">
+                            </div>
+
+                            <div class="form-group col-md-2">
+                                <label for="inputZip">Zip</label>
+                                <input type="text" class="form-control" id="inputZip">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAddress">Additional Address</label>
+                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                        </div>
+
+
+                        <button id="deliveryForm" type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Main Area End -->
+    <!-- Subscribe Area Start Here -->
+    <div class="subscribe-area">
+        <div class="container">
+            <div class="subscribe-content  offset-lg-6  text-center">
+                <h6><span>special ofers</span> for subscribers</h6>
+                <h2>ten percent member discount</h2>
+                <p>Subscribe to our e-commerce platform now and stay up-to-date with new collections
+                    exclusive offers.</p>
+                <div class="newsletter-box">
+                    <form action="#">
+                        <input class="subscribe" placeholder="your email address" name="email" type="email">
+                        <button type="submit" class="submit">submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Subscribe Area End Here -->
+    <!-- Online Support Area Start Here -->
+    <div class="online-support">
+        <div class="container">
+            <div class="row">
+                <!-- Single Support Start -->
+                <div class="col-lg-4">
+                    <div class="single-support mb-all-30">
+                        <div class="support-img">
+                            <img src="{%static 'img/icons/s1.png' %}" alt="support-img">
+                        </div>
+                        <div class="support-desc">
+                            <h4>Free delivery</h4>
+                            <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Support End -->
+                <!-- Single Support Start -->
+                <div class="col-lg-4">
+                    <div class="single-support mb-all-30">
+                        <div class="support-img">
+                            <img src="{%static 'img/icons/s2.png' %}" alt="support-img">
+                        </div>
+                        <div class="support-desc">
+                            <h4>money guarantee</h4>
+                            <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Support End -->
+                <!-- Single Support Start -->
+                <div class="col-lg-4">
+                    <div class="single-support">
+                        <div class="support-img">
+                            <img src="{%static 'img/icons/s3.png' %}" alt="support-img">
+                        </div>
+                        <div class="support-desc">
+                            <h4>online support</h4>
+                            <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Support End -->
+            </div>
+        </div>
+    </div>
+    <!-- Online Support Area End Here -->
+    <!-- Footer Area Start Here -->
+
+    <!-- Footer Area End Here -->
+</body>
+
+<script src="{%static 'js/proceed-to-checkout.js' %}"></script>
+{%endblock%}
+<!-- Main Wrapper End Here -->
+
+
+
+
+
+
+
+
