@@ -206,8 +206,8 @@ for (const item of cartItems) {
 }
 
 console.log(`Total price: ${totalPrice}`);
-document.getElementById("cart-total").textContent=<span>$<span> + totalPrice;
-document.getElementById("sub-total").textContent=<span>$<span> + totalPrice;
+document.getElementById("cart-total").textContent="$"+ totalPrice;
+document.getElementById("sub-total").textContent="$"+ totalPrice;
 }
 updateprice();
 
