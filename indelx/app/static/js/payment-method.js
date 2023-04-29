@@ -1,5 +1,7 @@
 window.onload = function() {
 const order_id = document.querySelector('meta[name="order_id"]').getAttribute('content');
+const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
     console.log(order_id);
       paypal.Buttons({
         // Order is created on the server and the order id is returned
