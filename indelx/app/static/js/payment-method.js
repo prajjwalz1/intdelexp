@@ -10,7 +10,7 @@ const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute
             method: "POST",
             headers: {
               "Content-Type": "application/json",
-              "X-CSRFToken": "{{ csrf_token }}",
+              "X-CSRFToken": csrfToken,
             },
             // use the "body" param to optionally pass additional order information
             // like product skus and quantities
@@ -33,7 +33,7 @@ const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute
           return fetch("/my-server/capture-paypal-order", {
             method: "POST",
             headers: {
-              "X-CSRFToken": "{{ csrf_token }}",
+              "X-CSRFToken": csrfToken,
               "Content-Type": "application/json",
             },
             body: JSON.stringify({
