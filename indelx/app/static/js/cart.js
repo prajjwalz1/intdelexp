@@ -122,7 +122,7 @@ function checkout() {
             if (response.authenticated) {
               window.location.href = '/place_order';
             } else {
-              // Handle unauthenticated user
+              window.location.href = '/login';
             }
           },
           error: function(jqXHR, textStatus, errorThrown) {
