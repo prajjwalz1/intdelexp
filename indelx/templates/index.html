@@ -81,7 +81,7 @@
                         <!-- Single Product Start -->
                         <div class="single-aboss-product clearfix">
                             <div class="pro-img">
-                                <a href="product-details.html"><img src="{{product.image.url}}" alt="product-img"></a>
+                                <a href="{%url 'productdetails' product.id%}"><img src="{{product.image.url}}" alt="product-img"></a>
                                 <span class="sticker-new">new</span>
                                 <div class="pro-actions">
                                     <button data-bs-toggle="modal" data-bs-target="#productModals" type="button" class="quick-view quickview-button" data-button_product_id={{product.id}}>
