@@ -3,7 +3,7 @@ const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute
 
 
  $(document).ready(function() {
-    $('.btn_quick-view').click(function(e) {
+    $('.quickview-button').click(function(e) {
       e.preventDefault();
       var product_id = $(this).data('button_product_id');
       console.log("Button with product id " + product_id + " was clicked");
