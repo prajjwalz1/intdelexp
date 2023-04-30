@@ -58,9 +58,9 @@ addToCartButtons.forEach(button => {
 
 
     ///code to delete cart items when cross icon is clicked
-    const cartListr = document.getElementById("cart-list");
+    const cartListr = document.getElementById("fa-window-close");
     cartListr.addEventListener("click", event => {
-      if (event.target.classList.contains("del-icone")) {
+
         // Get the parent li element of the delete button
         const li = event.target.closest("li");
 
@@ -82,7 +82,7 @@ addToCartButtons.forEach(button => {
         li.remove();
         updatecartlength();
         updateprice();
-          }
+
         });
 
 

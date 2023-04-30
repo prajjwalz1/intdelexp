@@ -1,4 +1,24 @@
 // Retrieve cart items from local storage
+console.log("owl carosel enabled");
+  $("#featured-pro-active").owlCarousel({
+
+    items: 3, // Change this to the number of products you want to show at once
+    loop: true,
+    autoplay: true,
+    autoplayTimeout: 1000, // Change this to adjust the autoplay speed
+    responsive: {
+      // Change these breakpoints to adjust the number of products shown at different screen sizes
+      0: {
+        items: 1
+      },
+      600: {
+        items: 2
+      },
+      1000: {
+        items: 4
+      }
+    }
+  });
 
 $('.add-to-cart-button').click(function(e) {
     e.preventDefault(); // prevent the default behavior of the click event
