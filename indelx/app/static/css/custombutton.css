@@ -34,7 +34,7 @@
     visibility: visible;
     }
 
-.quickview-button,.addtocart-button{
+.quickview-button{
     position: relative;
     border: 2px solid transparent;
     height: 40px;
