@@ -41,6 +41,23 @@
 
     <script src="{%static 'js/vendor/jquery-3.6.0.min.js' %}"></script>
     <script src="{%static 'js/vendor/modernizr-3.5.0.min.js' %}"></script>
+    <style>
+          #toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    color: #fff;
+    padding: 16px;
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  #toast.show {
+    opacity: 1;
+  }
+    </style>
 
 
 
@@ -166,6 +183,7 @@
 
                                             {% endif %}
                                         </ul>
+                                        <div id="toast"></div>
                                     </nav><!-- Cart & Search Area End -->
                                 </div>
                             </div>

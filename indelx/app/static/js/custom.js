@@ -27,17 +27,26 @@ $('.add-to-cart-button').click(function(e) {
     // your code to add the item to the cart goes here
 });
 updatecartlength();
+const toast = document.getElementById("toast");
 // Add event listener to all add to cart buttons
 const addToCartButtons = document.querySelectorAll(".add-cart-button");
 addToCartButtons.forEach(button => {
   button.addEventListener("click", event => {
-    toast.show('product added to cart');
+
+
+
 
     // Get product details from button data attributes
     const name = event.target.getAttribute("data-name");
     const price = Number(event.target.getAttribute("data-price"));
     const image = event.target.getAttribute("data-image");
     const id=Number(event.target.getAttribute("data-product_id"));
+    const message = name + " has been added to your cart!";
+    toast.innerHTML = message;
+    toast.classList.add("show");
+     setTimeout(() => {
+        toast.classList.remove("show");
+      }, 3000);
 
     let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
     // Check if product is already in cart
