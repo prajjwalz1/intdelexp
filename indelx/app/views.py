@@ -60,7 +60,7 @@ def productdetails(request,product_id):
     serializer=productserializer(productdetails1)
     json_data=JSONRenderer().render(serializer.data)
     print(productdetails)
-    return render(request,'product-details.html',{'product':productdetails1})
+    return render(request,'product-details.html',{'product':serializer})
 
 
 
