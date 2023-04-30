@@ -104,7 +104,7 @@ addToCartButtons.forEach(button => {
         li.remove();
         updatecartlength();
         updateprice();
-
+          }
         });
 
 
@@ -146,7 +146,7 @@ if (get_cartItems && get_cartItems.length > 0) {
     cartContent.appendChild(productName);
     const cartPrice = document.createElement("span");
     cartPrice.classList.add("cart-price");
-    cartPrice.textContent = cart.price;
+    cartPrice.textContent = '$'+cart.price ;
     cartContent.appendChild(cartPrice);
     const cartSize = document.createElement("span");
     cartSize.textContent = `Size: ${cart.size}`;
@@ -195,14 +195,14 @@ window.addEventListener("storage", function(event) {
         </div>
         <div class="cart-content">
           <h6><a href="product-details.html">${cart.name}</a></h6>
-          <span class="cart-price">${cart.price}</span>
+          <span class="cart-price">$${cart.price}</span>
           <span>Size: ${cart.size}</span>
           <span>Color: ${cart.color}</span>
         </div>
         <a id="removeanchor" class="del-icone" ><i class="fa fa-window-close"></i></a>
       `;
       cartList.appendChild(li);
-    
+
     });
   }
 });
@@ -228,8 +228,8 @@ for (const item of cartItems) {
 }
 
 console.log(`Total price: ${totalPrice}`);
-document.getElementById("cart-total").textContent=<span>$<span> + totalPrice;
-document.getElementById("sub-total").textContent=<span>$<span> + totalPrice;
+document.getElementById("cart-total").textContent="$"+ totalPrice;
+document.getElementById("sub-total").textContent="$"+ totalPrice;
 }
 updateprice();
 
