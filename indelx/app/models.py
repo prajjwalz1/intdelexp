@@ -76,6 +76,14 @@ class product_model(models.Model):
     category=models.CharField(choices=CATEGORY_CHOICES,max_length=2)
     image=models.ImageField(upload_to='projects/')
     quantity = models.PositiveIntegerField(default=1)
+    deal = models.BooleanField(default=False)
+    deal_date = models.DateTimeField(null=True, blank=True)
+
+    def save(self, *args, **kwargs):
+        if not self.deal:
+            # If the deal is not active, set the deal date to None
+            self.deal_date = None
+        super().save(*args, **kwargs)
     def save(self, *args, **kwargs):
         # Open the image using Pillow
         image = Image.open(self.image)

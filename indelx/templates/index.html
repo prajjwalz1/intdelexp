@@ -77,6 +77,7 @@
 
                     <div class="deal-pro-active owl-carousel">
                         {%for product in product%}
+                        {% if product.deal %}
                         <!-- Single Product Start -->
                         <div class="single-aboss-product clearfix">
                             <div class="pro-img">
@@ -100,12 +101,13 @@
                                     <i class="fa fa-star-o" aria-hidden="true"></i>
                                     <i class="fa fa-star-o" aria-hidden="true"></i>
                                 </div>
-                                <p><span class="prev-price">$30.50</span><span class="price">$28.98</span></p>
-                                <p>Long printed dress with thin adjustable straps. V-neckline and wiring under the bust
-                                    with ruffles at the bottom of the dress.</p>
-                                <div class="countdown d-flex flex-wrap mt-30" data-countdown="2020/07/01"></div>
+                                <p><span class="prev-price">${{product.selling_price}}</span><span class="price">${{product.discounted_price}}</span></p>
+                                <p>{{product.description}}</p>
+                                <div class="countdown d-flex flex-wrap mt-30" data-countdown="{{ product.deal_date|date:'Y/m/d' }}"></div>
                             </div>
                         </div>
+                         {% endif %}
+
                         {%endfor%}
                     </div>
 

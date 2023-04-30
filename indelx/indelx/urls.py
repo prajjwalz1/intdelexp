@@ -27,3 +27,6 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls'))
 
 ]
+admin.site.site_header = "welcome  Admin"
+admin.site.site_title = "International Delivery Express Nepal"
+admin.site.index_title = "Admin International Delivery Express Nepal"
