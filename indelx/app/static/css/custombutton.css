@@ -42,10 +42,13 @@
     background-color: #16bdbd;
     color: #FFF;
     text-transform: uppercase;
-    font-weight: 300;
+    font-weight: 500;
     border-radius: 30px;
     transition: 0.2s all;
     font-family: "Oswald", sans-serif;
+    font-size:12px;
+    margin-button:5px;
+    ine-height:40px;
     }
     .check-button:hover{
     background-color: #FFF;
