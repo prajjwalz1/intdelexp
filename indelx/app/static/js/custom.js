@@ -37,7 +37,7 @@ addToCartButtons.forEach(button => {
 
 
     // Get product details from button data attributes
-//    const name = event.target.dataset.name;
+    const name = decodeURIComponent(event.target.dataset.name);
     const price = Number(event.target.getAttribute("data-price"));
     const image = event.target.getAttribute("data-image");
     const id=Number(event.target.getAttribute("data-product_id"));
