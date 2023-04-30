@@ -38,14 +38,16 @@
     position: relative;
     border: 2px solid transparent;
     height: 35px;
-    padding: 0 11px;
+    padding: 0 29px;
     background-color: #16bdbd;
     color: #FFF;
     text-transform: uppercase;
-    font-weight: 300;
-    border-radius: 60px;
+    font-weight: 500;
+    font-size:12px;
+    border-radius: 30px;
     transition: 0.2s all;
     font-family: "Oswald", sans-serif;
+    min-width: 120px;
     }
     .check-button:hover{
     background-color: #FFF;
