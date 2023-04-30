@@ -30,11 +30,11 @@ const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute
             if (response.authenticated) {
               window.location.href = '/place_order';
             } else {
-              // Handle unauthenticated user
+                window.location.href = '/login';
             }
           },
           error: function(jqXHR, textStatus, errorThrown) {
-            // Handle error
+              window.location.href = '/login';
           }
           });
         }
