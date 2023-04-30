@@ -1,11 +1,12 @@
 // Retrieve cart items from local storage
-console.log("owl carosel enabled");
+
+  console.log("owl carosel enabled");
   $("#featured-pro-active").owlCarousel({
 
     items: 3, // Change this to the number of products you want to show at once
     loop: true,
     autoplay: true,
-    autoplayTimeout: 3000, // Change this to adjust the autoplay speed
+    autoplayTimeout: 4000, // Change this to adjust the autoplay speed
     responsive: {
       // Change these breakpoints to adjust the number of products shown at different screen sizes
       0: {
@@ -19,6 +20,7 @@ console.log("owl carosel enabled");
       }
     }
   });
+
 
 $('.add-to-cart-button').click(function(e) {
     e.preventDefault(); // prevent the default behavior of the click event
@@ -80,7 +82,7 @@ addToCartButtons.forEach(button => {
     ///code to delete cart items when cross icon is clicked
     const cartListr = document.getElementById("cart-list");
     cartListr.addEventListener("click", event => {
-      if (event.target.classList.contains("del-icone")) {
+      if (event.target.classList.contains("fa-window-close") || event.target.classList.contains("del-icone"))  {
         // Get the parent li element of the delete button
         const li = event.target.closest("li");
 
@@ -193,7 +195,7 @@ window.addEventListener("storage", function(event) {
         </div>
         <div class="cart-content">
           <h6><a href="product-details.html">${cart.name}</a></h6>
-          <span class="cart-price"><span>$ </span>${cart.price}</span>
+          <span class="cart-price">$${cart.price}</span>
           <span>Size: ${cart.size}</span>
           <span>Color: ${cart.color}</span>
         </div>
