@@ -31,6 +31,8 @@ updatecartlength();
 const addToCartButtons = document.querySelectorAll(".add-cart-button");
 addToCartButtons.forEach(button => {
   button.addEventListener("click", event => {
+    alert('product added to cart');
+
     // Get product details from button data attributes
     const name = event.target.getAttribute("data-name");
     const price = Number(event.target.getAttribute("data-price"));
