@@ -37,13 +37,13 @@
 .quickview-button{
     position: relative;
     border: 2px solid transparent;
-    height: 40px;
+    height: 10px;
     padding: 0 30px;
     background-color: #16bdbd;
     color: #FFF;
     text-transform: uppercase;
-    font-weight: 700;
-    border-radius: 40px;
+    font-weight: 300;
+    border-radius: 20px;
     transition: 0.2s all;
     }
     .check-button:hover{
