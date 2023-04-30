@@ -93,12 +93,9 @@
                                     </li>
 
                                     <li>
-                                        <button style="background-color:#16BDBD;"  class="pro-cart add-cart add-cart-button" data-image={{product.image.url}}
-                                                       data-name={{ product.pname | escapejs }} data-price={{product.discounted_price}}  data-product_id={{product.id}}>
-                                                    add to cart
-                                                </button>
+
                                         <button class="pro-cart add-cart-button" data-image={{product.image.url}}
-                                                       data-name={{product.pname}} data-price={{product.discounted_price}}  data-product_id={{product.id}}>add to cart</button>
+                                                       data-name="{{ product.pname | escapejs }}" data-price={{product.discounted_price}}  data-product_id={{product.id}}>add to cart</button>
                                     </li>
                                     <li class="pro-ref">
                                         <p><span class="in-stock"><i class="ion-checkmark-round"></i> in stock</span></p>
