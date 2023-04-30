@@ -5,7 +5,7 @@ console.log("owl carosel enabled");
     items: 3, // Change this to the number of products you want to show at once
     loop: true,
     autoplay: true,
-    autoplayTimeout: 1000, // Change this to adjust the autoplay speed
+    autoplayTimeout: 3000, // Change this to adjust the autoplay speed
     responsive: {
       // Change these breakpoints to adjust the number of products shown at different screen sizes
       0: {
