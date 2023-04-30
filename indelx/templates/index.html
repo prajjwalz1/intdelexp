@@ -138,9 +138,9 @@
                                                                                alt="product-img"></a>
                             <span class="sticker-new">new</span>
                             <div class="pro-actions">
-                                <a id=button_quickview data-bs-toggle="modal" data-bs-target="#productModals"
-                                   data-button_product_id={{product.id}} class="quick-view btn_quick-view">quick
-                                    view</a>
+                                 <button data-bs-toggle="modal" data-bs-target="#productModals" type="button" class="quick-view quickview-button" data-button_product_id={{product.id}}>
+                                        quick view
+                                    </button>
                                  <button id="add-to-cat" class="pro-cart add-cart add-cart-button" data-image={{product.image.url}}
                                                        data-name={{product.pname}} data-price={{product.discounted_price}}  data-product_id={{product.id}}>
                                                     add to cart
