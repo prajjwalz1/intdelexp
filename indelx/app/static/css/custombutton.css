@@ -37,7 +37,7 @@
 .quickview-button,.add-cart-button{
     position: relative;
     border: 2px solid transparent;
-    height: 35px;
+    height: 40px;
     padding: 0 29px;
     background-color: #16bdbd;
     color: #FFF;
@@ -48,6 +48,6 @@
     font-family: "Oswald", sans-serif;
     font-size:12px;
     margin-button:10px;
-    line-height:35px;
+    line-height:40px;
     text-align:center;
     }
