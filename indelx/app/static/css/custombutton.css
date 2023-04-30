@@ -4,7 +4,7 @@
     height: 40px;
     padding: 0 30px;
     background-color: #16bdbd;
-    color: #16bdbd;
+    color: #FFF;
     text-transform: uppercase;
     font-weight: 700;
     border-radius: 40px;
@@ -39,7 +39,7 @@
     border: 2px solid transparent;
     height: 35px;
     padding: 0 29px;
-    background-color: #fff;
+    background-color: #16bdbd;
     color: #FFF;
     text-transform: uppercase;
     font-weight: 500;
