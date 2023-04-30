@@ -404,6 +404,7 @@ def create_paypal_order(request):
     amount = str(orderdetails[0].order.total_price)
     print(amount)
     access_token = generate_access_token()
+    print(access_token)
 
 
 
