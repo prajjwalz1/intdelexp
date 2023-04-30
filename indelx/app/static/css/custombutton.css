@@ -39,7 +39,7 @@
     border: 2px solid transparent;
     height: 35px;
     padding: 0 29px;
-    background-color: #16bdbd;
+    background-color: #fff;
     color: #FFF;
     text-transform: uppercase;
     font-weight: 500;
@@ -50,7 +50,7 @@
     margin-button:5px;
     ine-height:40px;
     }
-    .check-button:hover{
+    .quickview-button{
     background-color: #FFF;
     color:#16bdbd;
     border-color: #16bdbd;
