@@ -1,1 +1,148 @@
 {%extends 'base.html'%}
+{%block content%}
+{%for data in product%}
+<div class="main-product-thumbnail quick-thumb-content">
+    <div class="container">
+        <!-- The Modal -->
+        <div class="modal fade" id="productModals">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <button type="button" id="productModalss" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="row">
+                            <!-- Main Thumbnail Image Start -->
+                            <div class="col-lg-6 col-md-6 mb-all-40">
+                                <!-- Thumbnail Large Image start -->
+                                <div class="tab-content">
+                                    <div id="pro-1" class="tab-pane fade show active">
+                                        <a data-fancybox="images" href="img/products/p-3.jpg"><img
+                                                src="{{data.image}}" alt="product-view" id="quick_view_image"></a>
+                                    </div>
+                                    <div id="pro-2" class="tab-pane fade">
+                                        <a data-fancybox="images" href="img/products/p5.jpg"><img
+                                                src="img/products/p5.jpg" alt="product-view"></a>
+                                    </div>
+                                    <div id="pro-3" class="tab-pane fade">
+                                        <a data-fancybox="images" href="img/products/p7.jpg"><img
+                                                src="img/products/p7.jpg" alt="product-view"></a>
+                                    </div>
+                                    <div id="pro-4" class="tab-pane fade">
+                                        <a data-fancybox="images" href="img/products/p2.jpg"><img
+                                                src="img/products/p2.jpg" alt="product-view"></a>
+                                    </div>
+                                </div>
+                                <!-- Thumbnail Large Image End -->
+                                <!-- Thumbnail Image End -->
+                                <div class="product-thumbnail">
+                                    <div class="thumb-menu owl-carousel nav tabs-area" role="tablist">
+                                        <a class="active" data-bs-toggle="tab" href="#pro-1"><img
+                                                src="img/thumbail/t1.jpg" alt="product-thumbnail"></a>
+                                        <a data-bs-toggle="tab" href="#pro-2"><img src="img/thumbail/t2.jpg"
+                                                                                   alt="product-thumbnail"></a>
+                                        <a data-bs-toggle="tab" href="#pro-3"><img src="img/thumbail/t3.jpg"
+                                                                                   alt="product-thumbnail"></a>
+                                        <a data-bs-toggle="tab" href="#pro-4"><img src="img/thumbail/t4.jpg"
+                                                                                   alt="product-thumbnail"></a>
+                                    </div>
+                                </div>
+                                <!-- Thumbnail image end -->
+                            </div>
+                            <!-- Main Thumbnail Image End -->
+                            <!-- Thumbnail Description Start -->
+                            <div class="col-lg-6 col-md-6">
+                                <div class="thubnail-desc fix">
+                                    <h3 class="modal-title">{{data.name}}</h3>
+                                    <ul class="rating-summary">
+                                        <li class="rating-pro">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </li>
+                                        <li class="read-review"><a href="#">read reviews (1)</a></li>
+                                        <li class="write-review"><a href="#">write review</a></li>
+                                    </ul>
+                                    <div class="pro-price mt-10">
+                                        <p class="d-flex align-items-center"><span>$<span><span class="modal-prev-price">{{data.selling_price}}</span><span
+                                                class="modal-new-price"><span>$<span>{{data.discounted_price}}</span><span
+                                                class="saving-price">-5%</span></p>
+
+                                    </div>
+                                    <p class="pro-desc-details modal-description">{{data.description}}</p>
+                                    <div class="product-size mtb-30 clearfix">
+                                        <label>Size</label>
+                                        <select class="">
+                                            <option>S</option>
+                                            <option>M</option>
+                                            <option>L</option>
+                                        </select>
+                                    </div>
+                                    <div class="color clearfix mb-30">
+                                        <label>color</label>
+                                        <ul class="color-list">
+                                            <li>
+                                                <a class="white" href="#"></a>
+                                            </li>
+                                            <li>
+                                                <a class="orange active" href="#"></a>
+                                            </li>
+                                            <li>
+                                                <a class="paste" href="#"></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="quatity-stock">
+                                        <label>Quantity</label>
+                                        <ul class="d-flex flex-wrap  align-items-center">
+                                            <li class="box-quantity">
+                                                <form action="#">
+
+                                                    <input class="quantity" id="'item-quantity" type="number"
+                                                           min="1" value="1">
+                                                </form>
+                                            </li>
+                                            <li>
+                                                <button id="add-to-cart-button" class="pro-cart"
+                                                        onclick="addToCart({{ item.id }}, $('#item-quantity').val())">
+                                                    add to cart
+                                                </button>
+                                            </li>
+                                            <li class="pro-ref">
+                                                <p><span class="in-stock"><i
+                                                        class="ion-checkmark-round"></i> in stock</span>
+                                                </p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="social-sharing mt-30">
+                                        <ul>
+                                            <li><label>share</label></li>
+                                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                            </li>
+                                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                            </li>
+                                            <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                                            </li>
+                                            <li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Thumbnail Description End -->
+                        </div>
+                    </div>
+                    <!-- Modal footer -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{%endfor%}
+{%endblock%}
