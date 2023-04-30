@@ -126,7 +126,7 @@ function checkout() {
             }
           },
           error: function(jqXHR, textStatus, errorThrown) {
-            // Handle error
+            window.location.href = '/login';
           }
           });
         }
