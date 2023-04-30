@@ -15,7 +15,7 @@ cartItems.forEach((item) => {
   tr.innerHTML = `
     <td class="product-thumbnail"><img src="../${item.image}" alt="cart-image"/></td>
     <td class="product-name"><a href="product-details.html" id="${item.id}">${item.name} </a></td>
-    <td class="product-price" value="${item.price}"><span class="amount"><span>$<span>${item.price}</span></td>
+    <td class="product-price" value="${item.price}"><span class="amount">$${item.price}</span></td>
     <td class="product-quantity">
       <div class="quantity-input">
         <button class="decrement-quantity-button">-</button>
