@@ -34,7 +34,7 @@
     visibility: visible;
     }
 
-.quickview-button,add-cart-button{
+.quickview-button,.add-cart-button{
     position: relative;
     border: 2px solid transparent;
     height: 35px;
