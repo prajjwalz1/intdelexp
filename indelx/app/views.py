@@ -356,7 +356,7 @@ def esewa_payment_success(request):
         print("we have reached to esewa success view")
     # Do something with the response, such as check if the payment was successful
         oid = request.GET.get('oid')
-        oid_num=int(oid)
+        oid_num=str(oid)
         amt = request.GET.get('amt')
         print("order id is retrieved"+oid_num)
         refId = request.GET.get('refId')
