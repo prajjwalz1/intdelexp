@@ -290,7 +290,7 @@ def create_order(request):
         data = json.loads(request.body)
         cart_items = data['cartItems']
 
-        order_id =  str(uuid.uuid4())
+
 
 
 
@@ -299,7 +299,7 @@ def create_order(request):
             customer_name=customer_name,
             location=location,
             phone_number=phone_number,
-            order_id=order_id
+
         )
 
         # Add each product to the order and calculate the total price
