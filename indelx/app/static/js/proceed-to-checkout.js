@@ -34,7 +34,7 @@ const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute
             }
           },
           error: function(jqXHR, textStatus, errorThrown) {
-              window.location.href = '/login';
+//              window.location.href = '/login';
           }
           });
         }
