@@ -364,6 +364,7 @@ def esewa(request):
         return redirect(url_with_params)
 
 def esewa_payment_success(request):
+        print("we have reached to esewa success view")
     # Do something with the response, such as check if the payment was successful
         oid = request.GET.get('oid')
         oid_num=int(oid)
