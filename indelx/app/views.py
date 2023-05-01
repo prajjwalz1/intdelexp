@@ -366,10 +366,10 @@ def esewa(request):
 def esewa_payment_success(request):
     # Do something with the response, such as check if the payment was successful
         oid = request.GET.get('oid')
-        print(oid)
+        oid_num=int(oid)
         amt = request.GET.get('amt')
         refId = request.GET.get('refId')
-        order = Order.objects.get(order_id=oid)
+        order = Order.objects.get(order_id=oid_num)
         print(order)
         order.payment_status = 'paid'
         order.save()
