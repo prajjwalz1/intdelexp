@@ -197,9 +197,8 @@ headers: {
       var total_price = response.total_price;
       var status = response.status;
        if ( status === 'success') {
-        window.location.href = "/paymentmethod/?order_id=" + order_id ; // redirect to eSewa payment portal
-      }else {
-        window.location.href = "/checkout" ; // redirect to eSewa payment portal
+        window.location.href = "/paymentmethod/?order_id=" + order_id ; // redirect paymentmethod.html
+
       }
 
       },

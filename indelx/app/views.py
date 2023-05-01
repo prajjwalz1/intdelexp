@@ -130,7 +130,7 @@ def payment(request):
 
     else:
         products = product_model.objects.all()
-        return render(request, 'create_order.html', {'products': products})
+        return render(request, 'placeorder2.html', {'products': products})
 
         # return render(request, 'order_created.html', {'order': order})
 
@@ -145,18 +145,7 @@ def payment(request):
     # if request.method == 'POST':
         # print("payment request not post")
         # print('POST request received')
-        url = 'https://uat.esewa.com.np/epay/main'
-        params = {
-            'amt': total_price,
-            'psc': 0,
-            'pdc': 0,
-            'txAmt': 0,
-            'tAmt': 100,
-            'pid': 'csrf_token',
-            'scd': 'EPAYTEST',
-            'su': 'http://merchant.com.np/page/esewa_payment_success',
-            'fu': 'http://merchant.com.np/page/esewa_payment_failed'
-        }
+
 
 def payment_method(request):
     order_id = request.GET.get('order_id')
@@ -356,7 +345,7 @@ def esewa(request):
             'tAmt':total_price,
             'pid': order_id,
             'scd': 'EPAYTEST',
-            'su': 'http://prajjwalacharya.pythonanywhere.com/payment/success',
+            'su': 'http://localhost:8000/payment/success',
             'fu': 'http://localhost:8000/payment/failure',
         }
 
