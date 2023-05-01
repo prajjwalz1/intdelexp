@@ -368,6 +368,7 @@ def esewa_payment_success(request):
         oid = request.GET.get('oid')
         oid_num=int(oid)
         amt = request.GET.get('amt')
+        print("order id is retrieved"+oid_num)
         refId = request.GET.get('refId')
         order = Order.objects.get(order_id=oid_num)
         print(order)
