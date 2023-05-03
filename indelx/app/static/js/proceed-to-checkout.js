@@ -1,4 +1,4 @@
- console.log('{{csrf_token}}');
+
 const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
     window.onload = function() {
   // Code that runs after the page has loaded
@@ -31,7 +31,7 @@ const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute
             }
           },
           error: function(jqXHR, textStatus, errorThrown) {
-                 console.log(response);
+
           }
           });
     }
