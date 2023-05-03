@@ -1,6 +1,6 @@
 
 //const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-    window.onload = function() {
+    window.onload {
   // Code that runs after the page has loaded
 
     checkout_amount=document.querySelector('.checkoutamount').textContent;
