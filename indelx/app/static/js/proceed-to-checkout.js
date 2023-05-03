@@ -1,5 +1,5 @@
 
-const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+//const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
     window.onload = function() {
   // Code that runs after the page has loaded
 
@@ -15,7 +15,7 @@ const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute
 
   // Send AJAX request to checkout view
        $.ajax({
-        url: '/validate_user/',
+        url: '/validate_user',
         type: 'POST',
         contentType: 'application/json',
         dataType: 'json',
