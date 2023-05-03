@@ -22,10 +22,7 @@ const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute
         data: JSON.stringify({cartItems: cartItems}),
         headers: {
             'X-CSRFToken': csrfToken
-        },
-
-    //    noo need because all $ajax request will send csrf token to its header by our code at top
-
+        }
           success: function(response) {
             if (response.authenticated) {
               window.location.href = '/place_order';
@@ -34,7 +31,7 @@ const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute
             }
           },
           error: function(jqXHR, textStatus, errorThrown) {
-//              window.location.href = '/login';
+    //              window.location.href = '/login';
           }
           });
-        }
+    }
