@@ -1,4 +1,4 @@
-//window.onload = function() {
+window.onload = function() {
 
 const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 const cartList = document.getElementById("cart-list-detail");
@@ -115,13 +115,12 @@ function checkout() {
         'X-CSRFToken': '{{csrf_token}}'
     },
 
-//    noo need because all $ajax request will send csrf token to its header by our code at top
 
       success: function(response) {
         if (response.authenticated) {
           window.location.href = '/place_order';
         } else {
-          window.location.href = '/login';
+         console.log(response);
         }
       },
       error: function(jqXHR, textStatus, errorThrown) {
@@ -144,6 +143,6 @@ function decrementQuantity() {
     }
 }
 
-//}
+}
 
 
