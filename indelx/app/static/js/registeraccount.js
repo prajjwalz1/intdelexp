@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
     // listen for form submit event
     $('form').on('submit', function(event) {
 
@@ -8,6 +8,7 @@ $(document).ready(function() {
 
 
         // retrieve user input values
+        const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
         var socialTitle = $('input[name="id_gender"]:checked').val();
         var firstName = $('#f-name').val();
         var lastName = $('#l-name').val();
@@ -35,7 +36,7 @@ $(document).ready(function() {
             url: '',
             type: 'POST',
             headers: {
-                'X-CSRFToken': csrftoken
+                'X-CSRFToken': csrfToken
                             },
             data: data,
             success: function(response) {
