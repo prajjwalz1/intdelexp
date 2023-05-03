@@ -144,6 +144,6 @@ function decrementQuantity() {
     }
 }
 
-};
+}
 
 
