@@ -1,8 +1,7 @@
-const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 const checkout_amount = document.querySelector('.checkoutamount').textContent;
 console.log(checkout_amount);
 
-function checkout() {
+function checkout(event) {
   const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
   console.log(cartItems);
 
