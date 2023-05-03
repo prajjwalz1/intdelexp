@@ -117,16 +117,17 @@ function checkout() {
     },
 
 
-      success: function(response) {
+     success:function(response) {
         if (response.authenticated) {
           window.location.href = '/place_order';
         } else {
          console.log(response);
         }
-      },
+
       error: function(jqXHR, textStatus, errorThrown) {
         console.log(response);
       }
+      },
       });
 }
 
