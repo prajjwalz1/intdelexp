@@ -97,39 +97,39 @@ function updateCartItemInLocalStorage(itemId, quantity) {
   item.quantity = quantity;
 
   // Save the updated cart object back to local storage
-  localStorage.setItem("cartItems", JSON.stringify(cartItems));
+localStorage.setItem("cartItems", JSON.stringify(cartItems));
 function checkout() {
 
 
 
-     var cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-     console.log(cartItems);
+ var cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+ console.log(cartItems);
 
-  // Send AJAX request to checkout view
-       $.ajax({
-        url: '/validate_user/',
-        type: 'POST',
-        contentType: 'application/json',
-        dataType: 'json',
-        data: JSON.stringify({cartItems: cartItems,checkout_amount:checkout_amount}),
-        headers: {
-            'X-CSRFToken': '{{csrf_token}}'
-        },
+// Send AJAX request to checkout view
+   $.ajax({
+    url: '/validate_user/',
+    type: 'POST',
+    contentType: 'application/json',
+    dataType: 'json',
+    data: JSON.stringify({cartItems: cartItems,checkout_amount:checkout_amount}),
+    headers: {
+        'X-CSRFToken': '{{csrf_token}}'
+    },
 
-    //    noo need because all $ajax request will send csrf token to its header by our code at top
+//    noo need because all $ajax request will send csrf token to its header by our code at top
 
-          success: function(response) {
-            if (response.authenticated) {
-              window.location.href = '/place_order';
-            } else {
-              window.location.href = '/login';
-            }
-          },
-          error: function(jqXHR, textStatus, errorThrown) {
-            window.location.href = '/login';
-          }
-          });
+      success: function(response) {
+        if (response.authenticated) {
+          window.location.href = '/place_order';
+        } else {
+          window.location.href = '/login';
         }
+      },
+      error: function(jqXHR, textStatus, errorThrown) {
+        window.location.href = '/login';
+      }
+      });
+}
 
 // Function to increment the quantity
 function incrementQuantity() {
