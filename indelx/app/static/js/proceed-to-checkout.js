@@ -1,6 +1,6 @@
 
 //const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-    window.onload {
+   window.addEventListener("load", function(){
   // Code that runs after the page has loaded
 
     checkout_amount=document.querySelector('.checkoutamount').textContent;
@@ -35,4 +35,4 @@
           }
           });
     }
-    }
+    });
