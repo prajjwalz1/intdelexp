@@ -1,4 +1,4 @@
-window.onload = function() {
+//window.onload = function() {
 
 const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 const cartList = document.getElementById("cart-list-detail");
@@ -143,6 +143,6 @@ function decrementQuantity() {
     }
 }
 
-}
+//}
 
 
