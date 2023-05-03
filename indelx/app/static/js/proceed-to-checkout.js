@@ -22,14 +22,14 @@ const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute
         data: JSON.stringify({cartItems: cartItems}),
         headers: {
             'X-CSRFToken': csrfToken
-        }
+        },
           success: function(response) {
             if (response.authenticated) {
               window.location.href = '/place_order';
             } else {
                 window.location.href = '/login';
             }
-          }),
+          },
           error: function(jqXHR, textStatus, errorThrown) {
                  console.log(response);
           }
