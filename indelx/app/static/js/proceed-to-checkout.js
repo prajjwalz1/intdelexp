@@ -23,6 +23,7 @@ function checkout(event) {
       }
     }
   });
+  return false;
 }
 
 window.addEventListener("load", function(){
