@@ -98,6 +98,8 @@ function updateCartItemInLocalStorage(itemId, quantity) {
 
   // Save the updated cart object back to local storage
 localStorage.setItem("cartItems", JSON.stringify(cartItems));
+}
+
 function checkout() {
 
 
@@ -147,4 +149,4 @@ function decrementQuantity() {
 
 }
 
-}
+
