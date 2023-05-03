@@ -29,7 +29,7 @@ const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute
             } else {
                 window.location.href = '/login';
             }
-          },
+          }),
           error: function(jqXHR, textStatus, errorThrown) {
                  console.log(response);
           }
