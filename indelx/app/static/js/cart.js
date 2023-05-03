@@ -125,7 +125,7 @@ function checkout() {
         }
       },
       error: function(jqXHR, textStatus, errorThrown) {
-        window.location.href = '/login';
+        console.log(response);
       }
       });
 }
