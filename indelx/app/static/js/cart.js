@@ -56,6 +56,7 @@ cartItems.forEach((item) => {
 
   // Add event listeners to the decrement and increment buttons
   decrementButton.addEventListener("click", () => {
+  event.preventDefault();
     if (item.quantity > 1) {
       item.quantity -= 1;
       quantityInput.value = item.quantity;
@@ -66,6 +67,7 @@ cartItems.forEach((item) => {
   });
 
   incrementButton.addEventListener("click", () => {
+  event.preventDefault();
     item.quantity += 1;
     quantityInput.value = item.quantity;
     updateCartItemInLocalStorage(item.id, item.quantity);
