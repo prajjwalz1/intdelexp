@@ -15,7 +15,7 @@
 
   // Send AJAX request to checkout view
        $.ajax({
-        url: 'validate_user',
+        url: '/validate_user',
         type: 'POST',
         contentType: 'application/json',
         dataType: 'json',
@@ -34,4 +34,4 @@
 
           }
           });
-    }
+    };
