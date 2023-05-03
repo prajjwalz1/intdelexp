@@ -127,7 +127,7 @@ function checkout() {
       error: function(jqXHR, textStatus, errorThrown) {
         console.log(response);
       }
-      },
+      }
       });
 }
 
