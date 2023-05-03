@@ -110,7 +110,7 @@ function checkout() {
     type: 'POST',
     contentType: 'application/json',
     dataType: 'json',
-    data: JSON.stringify({cartItems: cartItems,checkout_amount:checkout_amount}),
+    data: JSON.stringify({cartItems: cartItems}),
     headers: {
         'X-CSRFToken': '{{csrf_token}}'
     },
