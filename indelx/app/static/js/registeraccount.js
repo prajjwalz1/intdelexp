@@ -1,10 +1,11 @@
 $(document).ready(function() {
+    const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
     // listen for form submit event
     $('form').on('submit', function(event) {
 
         // prevent default form submission
         event.preventDefault();
-        var csrftoken = getCookie('csrftoken');
+
 
         // retrieve user input values
         var socialTitle = $('input[name="id_gender"]:checked').val();
