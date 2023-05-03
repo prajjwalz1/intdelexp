@@ -1,10 +1,9 @@
-//window.onload = function() {
+window.onload = function() {
 
 const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 const cartList = document.getElementById("cart-list-detail");
 const totalPrice = document.getElementById("total-price");
 const subtotals = document.getElementById("sub-price");
-const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
 
 //console.log(csrf_token);
@@ -111,17 +110,18 @@ function checkout() {
     type: 'POST',
     contentType: 'application/json',
     dataType: 'json',
-    data: JSON.stringify({cartItems: cartItems}),
+    data: JSON.stringify({cartItems: cartItems,checkout_amount:checkout_amount}),
     headers: {
         'X-CSRFToken': '{{csrf_token}}'
     },
 
+//    noo need because all $ajax request will send csrf token to its header by our code at top
 
       success: function(response) {
         if (response.authenticated) {
           window.location.href = '/place_order';
         } else {
-         console.log(response);
+          window.location.href = '/login';
         }
       },
       error: function(jqXHR, textStatus, errorThrown) {
@@ -144,6 +144,6 @@ function decrementQuantity() {
     }
 }
 
-//}
+}
 
 
