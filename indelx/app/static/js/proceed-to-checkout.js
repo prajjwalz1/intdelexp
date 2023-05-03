@@ -2,6 +2,7 @@ const checkout_amount = document.querySelector('.checkoutamount').textContent;
 console.log(checkout_amount);
 
 function checkout(event) {
+  event.preventDefault();
   const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
   console.log(cartItems);
 
