@@ -222,6 +222,7 @@ def register_view(request):
 
         # Return a JSON response with a success message
         return JsonResponse({'message': 'Registration successful!'})
+        return render(request,'registeredsuccess.html')
     else:
         return render(request, 'register.html')
 from django.contrib.auth import logout
