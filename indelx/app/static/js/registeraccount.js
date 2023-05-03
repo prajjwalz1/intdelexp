@@ -42,7 +42,7 @@ $(document).ready(function() {
             success: function(response) {
                 // handle success response
                 console.log(response);
-                window.location.href ="/"
+
             },
             error: function(xhr, status, error) {
                 // handle error response
