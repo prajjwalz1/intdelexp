@@ -113,20 +113,19 @@ function checkout() {
     dataType: 'json',
     data: JSON.stringify({cartItems: cartItems}),
     headers: {
-        'X-CSRFToken': csrfToken
+        'X-CSRFToken': '{{csrf_token}}'
     },
 
 
-     success:function(response) {
+      success: function(response) {
         if (response.authenticated) {
           window.location.href = '/place_order';
         } else {
          console.log(response);
         }
-
+      },
       error: function(jqXHR, textStatus, errorThrown) {
-        console.log(response);
-      }
+        window.location.href = '/login';
       }
       });
 }
