@@ -4,6 +4,7 @@ const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 const cartList = document.getElementById("cart-list-detail");
 const totalPrice = document.getElementById("total-price");
 const subtotals = document.getElementById("sub-price");
+const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
 
 //console.log(csrf_token);
@@ -112,7 +113,7 @@ function checkout() {
     dataType: 'json',
     data: JSON.stringify({cartItems: cartItems}),
     headers: {
-        'X-CSRFToken': '{{csrf_token}}'
+        'X-CSRFToken': csrfToken
     },
 
 
