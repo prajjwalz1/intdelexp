@@ -17,6 +17,9 @@
     padding: 0px 30px 0px 50px;
     cursor: pointer;
     }
+    .check-button:active{
+    background-color:green;
+    }
     .check-button>i {
     position: absolute;
     left: 0;
