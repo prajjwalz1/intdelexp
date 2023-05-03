@@ -101,9 +101,6 @@ localStorage.setItem("cartItems", JSON.stringify(cartItems));
 }
 
 function checkout() {
-
-
-
  var cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
  console.log(cartItems);
 
