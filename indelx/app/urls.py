@@ -2,15 +2,20 @@ from . import views
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
+
+from rest_framework import routers
 from django.urls import  re_path
 # from app import views
+from django.urls import path, include
 # app_name = 'app'
+from .views import productdetails
+
 urlpatterns = [
     path('', views.home, name='home'),
 
     # path('', views.prodview, name='prodview'),
     path('quickview/<int:product_id>/', views.quickview, name='product_details'),
-    path('productdetails/<int:product_id>', views.productdetails, name='productdetails'),
+    path('productdetails/<int:product_id>',views.productdetails,name='productdetails'),
     # path('cart/<int:id>',views.Cart, name='cart'),
     # path('add-to-cart/<int:product_id>', views.update_cart, name='add_to_cart'),
     path('checkout/',views.checkout,name='checkout'),

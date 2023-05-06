@@ -55,11 +55,19 @@ def quickview(request, product_id):
     }
 
     return JsonResponse(data)
-def productdetails(request,product_id):
+
+
+from rest_framework.views import APIView
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
+
+
+def productdetails(request, product_id):
     productdetails1=product_model.objects.get(id=product_id)
     serializer=productserializer(productdetails1)
-    json_data=JSONRenderer().render(serializer.data)
-    print(productdetails)
+    json_data=json.dumps(serializer.data)
+    print(json_data)
+
     return render(request,'product-details.html',{'product':productdetails1})
 
 
