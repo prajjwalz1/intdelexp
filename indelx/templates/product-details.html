@@ -19,11 +19,11 @@
                             <div id="thumb1" class="tab-pane fade show active">
                                 <a data-fancybox="images" href="{{product.image.url}}"><img src="{{product.image.url}}" alt="product-view"></a>
                             </div>
-                            <div id="thumb2" class="tab-pane fade show active">
-                                <a data-fancybox="images" href="{{product.image1.url}}"><img src="{{product.image1.url}}" alt="product-view"></a>
+                            <div id="thumb2" class="tab-pane fade show ">
+                                <a data-fancybox="images" href="{{product.image_2.url}}"><img src="{{product.image_2.url}}" alt="product-view"></a>
                             </div>
-                            <div id="thumb3" class="tab-pane fade show active">
-                                <a data-fancybox="images" href="{{product.image2.url}}"><img src="{{product.image2.url}}" alt="product-view"></a>
+                            <div id="thumb3" class="tab-pane fade show">
+                                <a data-fancybox="images" href="{{product.image_3.url}}"><img src="{{product.image_3.url}}" alt="product-view"></a>
                             </div>
 
                         </div>
@@ -32,9 +32,9 @@
                         <div class="product-thumbnail">
                             <div class="thumb-menu owl-carousel nav tabs-area" role="tablist">
                                 <a class="active" data-bs-toggle="tab" href="#thumb1"><img src="img/products/p2.jpg" alt="product-thumbnail"></a>
-                                <a data-bs-toggle="tab" href="#thumb2"><img src="img/products/p5.jpg" alt="product-thumbnail"></a>
-                                <a data-bs-toggle="tab" href="#thumb3"><img src="img/products/p3.jpg" alt="product-thumbnail"></a>
-                                <a data-bs-toggle="tab" href="#thumb4"><img src="img/products/p7.jpg" alt="product-thumbnail"></a>
+                                <a data-bs-toggle="tab" href="#thumb2"><img src="{{product.image_2.url}}" alt="product-thumbnail"></a>
+                                <a data-bs-toggle="tab" href="#thumb3"><img src="{{product.image_3.url}}" alt="product-thumbnail"></a>
+
                             </div>
                         </div>
                         <!-- Thumbnail image end -->
