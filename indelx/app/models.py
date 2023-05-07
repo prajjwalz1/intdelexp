@@ -60,7 +60,10 @@ class featbanner(models.Model):
     def __str__(self):
         return self.title;
 class product_category(models.Model):
-    name=models.CharField(max_length=100)
+    name=models.CharField(max_length=100,default='test')
+
+    def __str__(self):
+        return self.name
 class product_model(models.Model):
     pname=models.CharField(max_length=100)
     product_id= models.AutoField
@@ -68,15 +71,10 @@ class product_model(models.Model):
     discounted_price=models.FloatField()
     description=models.TextField()
     brand=models.CharField(max_length=100)
-    category = models.ForeignKey(product_category, on_delete=models.CASCADE)
-    CATEGORY_CHOICES = (
-        ('BW', 'Buttom wear'),
-        ('TW', 'Top Wear'),
-        ('Fw', 'Footwear'),
 
 
-    )
-    category=models.CharField(choices=CATEGORY_CHOICES,max_length=2)
+    # category=models.CharField(choices=CATEGORY_CHOICES,max_length=100,null=True)
+    category=models.ForeignKey(product_category,on_delete=models.CASCADE,null=True)
     image=models.ImageField(upload_to='projects/')
     image_2=models.ImageField(upload_to='projects/',blank=True)
     image_3 = models.ImageField(upload_to='projects/', blank=True)

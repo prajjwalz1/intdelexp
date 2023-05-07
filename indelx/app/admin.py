@@ -1,5 +1,5 @@
 from django.contrib import admin
-from.models import slide,featbanner,product_model,CartItem,MyUser,Customer,OrderItem,Order,PendingOrder,product_category
+from.models import slide,featbanner,product_model,CartItem,MyUser,Customer,product_category
 # Register your models here.
 admin.site.register(slide)
 admin.site.register(featbanner)
