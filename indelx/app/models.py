@@ -75,6 +75,8 @@ class product_model(models.Model):
     )
     category=models.CharField(choices=CATEGORY_CHOICES,max_length=2)
     image=models.ImageField(upload_to='projects/')
+    image_2=models.ImageField(upload_to='projects/',blank=True)
+    image_3 = models.ImageField(upload_to='projects/', blank=True)
     quantity = models.PositiveIntegerField(default=1)
     deal = models.BooleanField(default=False)
     deal_date = models.DateTimeField(null=True, blank=True)
