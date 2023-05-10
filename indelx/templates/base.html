@@ -190,10 +190,21 @@
                             <!-- Header Menu & Cart Area End Here -->
                         </div>
                         <!-- Mobile Menu Start -->
+
                         <div class="mobile-menu d-block d-lg-none">
+                            <span style="margin-left: auto; margin-bottom: 10px;"><a  href="{%url 'checkout' %}"><img src="{%static 'img/icons/cart.png' %}"
+                                                                         alt="cart-img"></a></span>
+
+
+
+
                             <nav>
+
+
+
                                 <ul>
-                                    <li><a href="">home</a>
+
+                                    <li><a href="{%url 'home'%}">home</a>
                                         <!-- Home Version Dropdown Start -->
 
                                         <!-- Home Version Dropdown End -->
@@ -209,8 +220,7 @@
 
                                     <li><a href="#">Contact Us</a></li>
                                     <li><a href="{%url 'login'%}">login</a></li>
-                                             <li><a href="{%url 'checkout' %}"><img src="{%static 'img/icons/cart.png' %}"
-                                                                         alt="cart-img"></a></li>
+
 
 
 
