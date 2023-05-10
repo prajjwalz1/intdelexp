@@ -131,6 +131,7 @@
                    <div id="featured-pro-active" class="featured-pro-active border-hover-effect owl-carousel">
 
                     {%for product in product%}
+                        {% if product.category.name == "Bags" %}
                     <!-- Single Product Start -->
                     <div class="single-aboss-product">
                         <div class="pro-img">
@@ -151,7 +152,7 @@
                             </div>
                         </div>
                         <div class="pro-content">
-                            <h4><a href="product-details.html">{{product.pname}}</a></h4>
+                            <h4><a href="{%url 'productdetails' product.id%}">{{product.pname}}</a></h4>
                             <div class="rating">
                                 <i class="fa fa-star" aria-hidden="true"></i>
                                 <i class="fa fa-star" aria-hidden="true"></i>
@@ -163,8 +164,58 @@
                             </p>
                         </div>
                     </div>
+                       {%endif%}
                     {%endfor%}
                 </div>
+                <br>
+
+                 <div class="section-title text-center mb-50">
+                    <h2>Trending House Essentials</h2>
+                    <p>Trending Nepali products all over the world</p>
+                </div>
+                <!-- Section Title End -->
+                <!-- Featured Product Activation Start -->
+                   <div id="featured-pro-active2" class="featured-pro-active border-hover-effect owl-carousel">
+
+                    {%for product in product%}
+                        {% if product.category.name == "home_essentials" %}
+                    <!-- Single Product Start -->
+                    <div class="single-aboss-product">
+                        <div class="pro-img">
+                            <a href="{%url 'productdetails' product.id%}"><img src="{{product.image.url}}"
+                                                                               alt="product-img"></a>
+                            <span class="sticker-new">new</span>
+                            <div class="pro-actions">
+                                 <button data-bs-toggle="modal" data-bs-target="#productModals" type="button" class="quick-view quickview-button" data-button_product_id={{product.id}}>
+                                        quick view
+                                    </button>
+                                 <button  class="pro-cart add-cart add-cart-button" data-image={{product.image.url}}
+                                                       data-name="{{ product.pname | escapejs }}" data-price={{product.discounted_price}}  data-product_id={{product.id}}>
+                                                    add to cart
+                                                </button>
+<!--                                <a id="add-to-cat" class="add-cart add-cart-button" data-image={{product.image.url}}-->
+<!--                                   data-name={{product.pname}} data-price={{product.discounted_price}}-->
+<!--                                   data-product_id={{product.id}}>add to cart</a>-->
+                            </div>
+                        </div>
+                        <div class="pro-content">
+                            <h4><a href="{%url 'productdetails' product.id%}">{{product.pname}}</a></h4>
+                            <div class="rating">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                            </div>
+                            <p><span class="prev-price">${{product.selling_price}}</span><span class="price">${{product.discounted_price}}</span>
+                            </p>
+                        </div>
+                    </div>
+                       {%endif%}
+                    {%endfor%}
+                </div>
+
+
                 <!-- +++
                     +++
                     ++++
@@ -271,7 +322,7 @@
                                 <!-- Thumbnail Large Image start -->
                                 <div class="tab-content">
                                     <div id="pro-1" class="tab-pane fade show active">
-                                        <a data-fancybox="images" href="img/products/p-3.jpg"><img
+                                        <a id="qickviewlarge" data-fancybox="images" href="img/products/p-3.jpg"><img
                                                 src="{{data.image}}" alt="product-view" id="quick_view_image"></a>
                                     </div>
                                     <div id="pro-2" class="tab-pane fade">

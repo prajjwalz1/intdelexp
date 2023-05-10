@@ -1,7 +1,7 @@
 // Retrieve cart items from local storage
 
   console.log("owl carosel enabled");
-  $("#featured-pro-active").owlCarousel({
+  $(".featured-pro-active").owlCarousel({
 
     items: 3, // Change this to the number of products you want to show at once
     loop: true,

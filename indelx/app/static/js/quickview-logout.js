@@ -21,6 +21,7 @@ const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute
           $('.modal-prev-price').text(data.selling_price);
           $('.modal-new-price').text(data.discounted_price);
           $('#quick_view_image').attr('src', data.image);
+          $('#qickviewlarge').attr('href', data.image);
           $('.modal-body');
 
           console.log(data);
