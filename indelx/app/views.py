@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.http import JsonResponse,HttpResponse
-from.models import slide,featbanner,product_model,CartItem,Customer,Order,OrderItem,PendingOrder
+from.models import slide,featbanner,product_model,CartItem,Customer,Order,OrderItem,PendingOrder,product_category
 from.serializers import productserializer
 from rest_framework.renderers import JSONRenderer
 
@@ -39,7 +39,8 @@ def home(request):
     slides=slide.objects.all()
     featbanners=featbanner.objects.all()
     productdetails = product_model.objects.all()
-    return render(request, 'index.html', {'user_email': user_email,'login_message': login_message,'slide':slides,'featbanner':featbanners,'product':productdetails,"csrf_token": get_token(request), } )
+    category=product_category.objects.all()
+    return render(request, 'index.html', {'user_email': user_email,'login_message': login_message,'slide':slides,'featbanner':featbanners,'product':productdetails,"csrf_token": get_token(request),'category':category } )
 
 
 def quickview(request, product_id):
