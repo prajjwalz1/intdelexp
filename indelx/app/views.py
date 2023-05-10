@@ -23,7 +23,12 @@ def get_token(request):
     csrf_token = request.META.get("CSRF_COOKIE", None)
     return csrf_token
 
-
+def productapi(request):
+    product=product_model.objects.all()
+    serializer=productserializer(product,many=True)
+    renderer = JSONRenderer()
+    json_data=renderer.render(serializer.data)
+    return HttpResponse(json_data,content_type='application/json')
 @ensure_csrf_cookie
 def home(request):
     # cart_product = cart_model.objects.get(session_key=request.session.session_key)
