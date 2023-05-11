@@ -54,6 +54,7 @@ ALLOWED_HOSTS = ['prajjwalacharya.pythonanywhere.com','www.getfromnepal.com','12
 # Application definition
 # from corsheaders.middleware import CorsMiddleware
 INSTALLED_APPS = [
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -62,12 +63,16 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'app.apps.AppConfig',
-    'customadmin'
-    'corsheaders',
+    'customadmin',
+
 
 ]
 
 MIDDLEWARE =[
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -75,9 +80,9 @@ MIDDLEWARE =[
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
+
 ]
-CORS_ORIGIN_ALLOW_ALL = True
+
 
 ROOT_URLCONF = 'indelx.urls'
 
@@ -165,3 +170,4 @@ MEDIA_URL="/media/"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+CORS_ORIGIN_ALLOW_ALL = True

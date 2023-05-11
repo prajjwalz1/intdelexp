@@ -4,6 +4,7 @@ from.models import slide,featbanner,product_model,CartItem,Customer,Order,OrderI
 from.serializers import productserializer
 from rest_framework.renderers import JSONRenderer
 
+
 from django.contrib.auth.decorators import login_required
 from django.template import RequestContext
 from django.views.decorators.csrf import ensure_csrf_cookie
