@@ -24,11 +24,11 @@ def get_token(request):
     return csrf_token
 import json
 def productapi(request):
-    product=product_model.objects.all()
-    serializer=productserializer(product,many=True)
-    renderer = JSONRenderer()
-    json_data=renderer.render(serializer.data)
-    return JsonResponse(json_data.decode('utf-8'), safe=False)
+    products = product_model.objects.all()
+    serializer = productserializer(products, many=True)
+    json_data = json.dumps(serializer.data, ensure_ascii=False)
+    decoded_data = json.loads(json_data)
+    return JsonResponse(decoded_data, safe=False)
 
 
 @ensure_csrf_cookie
