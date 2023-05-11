@@ -52,7 +52,7 @@ ALLOWED_HOSTS = ['prajjwalacharya.pythonanywhere.com','www.getfromnepal.com','12
 
 
 # Application definition
-
+# from corsheaders.middleware import CorsMiddleware
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -63,6 +63,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'app.apps.AppConfig',
     'customadmin'
+    'corsheaders',
 
 ]
 
@@ -74,7 +75,9 @@ MIDDLEWARE =[
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'indelx.urls'
 
