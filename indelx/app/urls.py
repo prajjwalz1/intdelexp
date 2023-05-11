@@ -34,5 +34,6 @@ urlpatterns = [
     path('my-server/capture-paypal-order', views.capture_payment, name='capture_payment'),
     path('paymentsuccess/',views.payment_success,name='payment_success'),
     path('paymentmethod/',views.payment_method,name='payment_method'),
+    path('product_search/',views.product_search,name='product_search'),
 
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

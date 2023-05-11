@@ -1,0 +1,131 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+{%load static%}
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="csrf-token" content="{{ csrf_token}}">
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- Fontawesome css -->
+    <link rel="stylesheet" href="{%static 'css/font-awesome.min.css' %}">
+    <!-- Animate css -->
+    <link rel="stylesheet" href="{%static 'css/animate.css' %}">
+    <!-- Ionicons css -->
+    <link rel="stylesheet" href="{%static 'css/ionicons.min.css' %}">
+    <!-- Nice select css -->
+    <link rel="stylesheet" href="{%static 'css/nice-select.css' %}">
+    <!-- Jquery fancybox css -->
+    <link rel="stylesheet" href="{%static 'css/jquery.fancybox.css' %}">
+    <!-- Jquery ui price slider css -->
+    <link rel="stylesheet" href="{%static 'css/jquery-ui.min.css' %}">
+    <!-- Meanmenu css -->
+    <link rel="stylesheet" href="{%static 'css/meanmenu.min.css' %}">
+    <!-- Owl carousel css -->
+    <link rel="stylesheet" href="{%static 'css/owl.carousel.min.css' %}">
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="{%static 'css/bootstrap.min.css' %}">
+    <!-- Custom css -->
+    <link rel="stylesheet" href="{%static 'css/default.css' %}">
+    <!-- Main css -->
+    <link rel="stylesheet" href="{%static 'css/style.css' %}">
+    <!-- Responsive css -->
+    <link rel="stylesheet" href="{%static 'css/responsive.css' %}">
+    <link rel="stylesheet" href="{%static 'css/slider.css' %}">
+    <link rel="stylesheet" href="{%static 'css/custombutton.css' %}">
+    <body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <!-- Container wrapper -->
+  <div class="container">
+    <!-- Navbar brand -->
+    <a class="navbar-brand me-2" href="https://mdbgo.com/">
+      <img
+        src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
+        height="16"
+        alt="MDB Logo"
+        loading="lazy"
+        style="margin-top: -1px;"
+      />
+    </a>
+
+    <!-- Toggle button -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarButtonsExample"
+      aria-controls="navbarButtonsExample"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarButtonsExample">
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Dashboard</a>
+        </li>
+      </ul>
+      <!-- Left links -->
+
+      <div class="d-flex align-items-center">
+        <button type="button" class="btn btn-link px-3 me-2">
+          Login
+        </button>
+        <button type="button" class="btn btn-primary me-3">
+          Sign up for free
+        </button>
+        <a
+          class="btn btn-dark px-3"
+          href="https://github.com/mdbootstrap/mdb-ui-kit"
+          role="button"
+          ><i class="fab fa-github"></i
+        ></a>
+      </div>
+    </div>
+    <!-- Collapsible wrapper -->
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
+</body>
+
+  {% block content %} {%endblock%}
+  <!-- jquery 3.6.0 -->
+<script src="{%static 'js/vendor/jquery-3.6.0.min.js' %}"></script>
+<!-- Countdown js -->
+<script src="{%static 'js/jquery.countdown.min.js' %}"></script>
+<!-- Mobile menu js -->
+<script src="{%static 'js/jquery.meanmenu.min.js' %}"></script>
+<!-- ScrollUp js -->
+<script src="{%static 'js/jquery.scrollUp.js' %}"></script>
+<!-- Fancybox js -->
+<script src="{%static 'js/jquery.fancybox.min.js' %}"></script>
+<!-- Jquery nice select js -->
+<script src="{%static 'js/jquery.nice-select.min.js' %}"></script>
+<!-- Jquery ui price slider js -->
+<script src="{%static 'js/jquery-ui.min.js' %}"></script>
+<!-- Owl carousel -->
+<script src="{%static 'js/owl.carousel.min.js' %}"></script>
+<!-- Bootstrap popper js -->
+<script src="{%static 'js/popper.min.js' %}"></script>
+<!-- Bootstrap js -->
+<script src="{%static 'js/bootstrap.min.js' %}"></script>
+<!-- Plugin js -->
+<script src="{%static 'js/plugins.js' %}"></script>
+<script src="{%static 'js/custom.js' %}"></script>
+<!-- Main activaion js -->
+<script src="{%static 'js/main.js' %}"></script>
+<script src="{%static 'js/quickview-logout.js' %}"></script>
+<script src="{%static 'js/cart.js' %}"></script>
+
+<script src="{%static 'js/autocomplete.js' %}"></script>
+{%block customjs%} {% endblock %}
+
+    <!--    <link rel="stylesheet" href="{%static 'css/search.css' %}">-->

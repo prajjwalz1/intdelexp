@@ -22,13 +22,15 @@ from django.views.decorators.http import require_POST
 def get_token(request):
     csrf_token = request.META.get("CSRF_COOKIE", None)
     return csrf_token
-
+import json
 def productapi(request):
     product=product_model.objects.all()
     serializer=productserializer(product,many=True)
     renderer = JSONRenderer()
     json_data=renderer.render(serializer.data)
-    return HttpResponse(json_data,content_type='application/json')
+    return JsonResponse(json_data.decode('utf-8'), safe=False)
+
+
 @ensure_csrf_cookie
 def home(request):
     # cart_product = cart_model.objects.get(session_key=request.session.session_key)
@@ -488,3 +490,15 @@ def payment_success(request):
     order.payment_status = 'paid'
     order.save()
     return render(request,'ordersuccess.html')
+
+from django.db.models import Q
+def product_search(request):
+    # Get the search term from the request
+    search_term = request.GET.get('search_term')
+
+    # Search for matching products
+    matching_products = product_model.objects.filter(Q(pname__icontains=search_term) | Q(description__icontains=search_term))
+    print(matching_products)
+
+    # Render the search results template with the matching products
+    return render(request, 'product_search_results.html', {'matching_products': matching_products})

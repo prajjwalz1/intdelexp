@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-     <title>{% block title %}{% endblock %}</title>
+    <title>{% block title %}{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="csrf-token" content="{{ csrf_token}}">
     <!-- Favicons -->
@@ -35,12 +35,15 @@
     <link rel="stylesheet" href="{%static 'css/responsive.css' %}">
     <link rel="stylesheet" href="{%static 'css/slider.css' %}">
     <link rel="stylesheet" href="{%static 'css/custombutton.css' %}">
+    <!--    <link rel="stylesheet" href="{%static 'css/search.css' %}">-->
+
 
     <!-- Modernizer js -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
     <script src="{%static 'js/vendor/jquery-3.6.0.min.js' %}"></script>
     <script src="{%static 'js/vendor/modernizr-3.5.0.min.js' %}"></script>
+    <script src="{%static 'js/search.js' %}"></script>
     <style>
           #toast {
     position: fixed;
@@ -57,8 +60,9 @@
   #toast.show {
     opacity: 1;
   }
-    </style>
 
+
+    </style>
 
 
 </head>
@@ -107,7 +111,8 @@
                         <!-- Logo Start Here -->
                         <div class="col-xl-3 col-lg-2 col-md-2 col-sm-3 col-4">
                             <div class="logo">
-                                <a href="{%url 'home'%}"><img src="{%static 'img/logo/logo.png' %}" alt="brand-image"></a>
+                                <a href="{%url 'home'%}"><img src="{%static 'img/logo/logo.png' %}"
+                                                              alt="brand-image"></a>
                             </div>
                         </div>
                         <!-- Logo End Here -->
@@ -115,6 +120,14 @@
                         <div class="col-xl-9 col-lg-10 col-md-10 col-sm-9 col-8">
                             <div class="maain-menu-area position-relative d-flex justify-content-lg-between justify-content-end">
                                 <!-- Primary Menu Start -->
+                                <span> <form method="GET" action="{% url 'product_search' %}">
+  <div class="container">
+    <input id="search_field" type="search" name="search_term" placeholder="Search your product here">
+    <button id="search_button" type="submit">Search</button>
+  </div>
+</form>
+
+                                   </span>
                                 <div class="primary-menu d-none d-lg-block">
                                     <nav>
                                         <ul class="primary-menu-list d-flex">
@@ -192,14 +205,12 @@
                         <!-- Mobile Menu Start -->
 
                         <div class="mobile-menu d-block d-lg-none">
-                            <span style="margin-left: auto; margin-bottom: 10px;"><a  href="{%url 'checkout' %}"><img src="{%static 'img/icons/cart.png' %}"
-                                                                         alt="cart-img"></a></span>
-
-
+                            <span style="margin-left: auto; margin-bottom: 10px;"><a href="{%url 'checkout' %}"><img
+                                    src="{%static 'img/icons/cart.png' %}"
+                                    alt="cart-img"></a></span>
 
 
                             <nav>
-
 
 
                                 <ul>
@@ -216,12 +227,8 @@
                                     <!-- Mobile Menu Dropdown End -->
 
 
-
-
                                     <li><a href="#">Contact Us</a></li>
                                     <li><a href="{%url 'login'%}">login</a></li>
-
-
 
 
                                     <!-- Mobile Menu Dropdown Start -->
@@ -241,7 +248,7 @@
     </header>
 </div>
 </body>
-        <!-- Header Bottom End Here -->
+<!-- Header Bottom End Here -->
 {% block content %}{% endblock %}
 
 <footer class="footer-area dark-blue-bg ptb-80 mtm-80">
