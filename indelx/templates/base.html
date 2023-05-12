@@ -62,6 +62,14 @@
   }
 
 
+
+
+
+
+
+
+
+
     </style>
 
 
@@ -107,9 +115,14 @@
         <div style="background-color:#16bdbd; " class="header-bottom header-sticky">
             <div class="container">
                 <div class="main-header">
+
                     <div class="row">
+
+
                         <!-- Logo Start Here -->
+
                         <div class="col-xl-3 col-lg-2 col-md-2 col-sm-3 col-4">
+
                             <div class="logo">
                                 <a href="{%url 'home'%}"><img src="{%static 'img/logo/logo.png' %}"
                                                               alt="brand-image"></a>
@@ -118,134 +131,146 @@
                         <!-- Logo End Here -->
                         <!-- Header Menu & Cart Area Start Here -->
                         <div class="col-xl-9 col-lg-10 col-md-10 col-sm-9 col-8">
-                            <div class="maain-menu-area position-relative d-flex justify-content-lg-between justify-content-end">
-                                <!-- Primary Menu Start -->
-                                <span> <form method="GET" action="{% url 'product_search' %}">
-  <div class="container">
-    <input id="search_field" type="search" name="search_term" placeholder="Search your product here">
-    <button id="search_button" type="submit">Search</button>
-  </div>
-</form>
 
-                                   </span>
-                                <div class="primary-menu d-none d-lg-block">
-                                    <nav>
-                                        <ul class="primary-menu-list d-flex">
-                                            <li class="active"><a href="{%url 'home'%}">home</a>
+                            <!--                            <div class="maain-menu-area position-relative d-flex justify-content-lg-between justify-content-end">-->
+                            <!-- Primary Menu Start -->
 
 
-                                            </li>
-                                            <li class="active"><a href="#">Products</a>
-
-                                            </li>
-                                            <li class="active"><a href="#">blogs</a>
-                                            </li>
-                                            <li class="active"><a href="#">Contact</a>
-                                            </li>
+                            <div class="primary-menu d-none d-lg-block">
 
 
-                                            <!-- Primary Menu End -->
-                                            <!-- Cart & Search Area Start -->
+                                <nav>
 
 
-                                            </li>
-                                            <li style=" margin-left:120px;"><a href="{%url 'login'%}">LOGIN</a>
-                                            <li><a id="logout-button" href="#">LOGOUT</a></li>
+                                    <ul class="primary-menu-list d-flex">
+                                        <li class="active"><a href="{%url 'home'%}">home</a>
 
 
-                                            <!--                                    <li class="active"><a href="{%url 'login'%}"><button type="button" class="btn btn-primary border-0">Login</button></a></li>-->
-                                            <!--                                    <li><button type="button"  id="logout-button" class="btn btn-primary border-0">Logout</button></li>-->
-                                            <div class="search-cart-area pr-all-50">
-                                                <ul class="d-flex">
+                                        </li>
+                                        <li class="active"><a href="#">Products</a>
 
-                                                    <li><a href="#"><img src="{%static 'img/icons/cart.png' %}"
-                                                                         alt="cart-img"><span
-                                                            id="cart-length"></span></a>
-                                                        <!-- Cart Box Start -->
-                                                        <ul class="ht-dropdown cart-box-width">
-                                                            <!-- Single Cart Box Start -->
-                                                            <div id="cart-list">
+                                        </li>
+                                        <li class="active"><a href="#">blogs</a>
+                                        </li>
+                                        <li class="active"><a href="#">Contact</a>
+                                        </li>
+                                        <li>
+                                            <form method="GET" class="d-flex my-2 my-lg-2 mx-auto my-2"
+                                                  action="{% url 'product_search' %}">
+                                                <input id="search_field" class="form-control mr-sm-2" type="search"
+                                                       placeholder="Search"
+                                                       aria-label="Search" name="search_term" style="width: 200px;">
+                                                <button id="search_button" class="btn btn-outline-success my-2 my-sm-0"
+                                                        type="submit">
+                                                    Search
+                                                </button>
+                                            </form>
 
+                                        </li>
+
+
+                                        <!-- Primary Menu End -->
+                                        <!-- Cart & Search Area Start -->
+
+
+
+
+                                        <div class="search-cart-area pr-all-50">
+                                            <ul class="d-flex">
+
+                                                <li><a href="#"><img src="{%static 'img/icons/cart.png' %}"
+                                                                     alt="cart-img"><span
+                                                        id="cart-length"></span></a>
+                                                    <!-- Cart Box Start -->
+                                                    <ul class="ht-dropdown cart-box-width">
+                                                        <!-- Single Cart Box Start -->
+                                                        <div id="cart-list">
+
+                                                        </div>
+
+
+                                                        <!-- Single Cart Box End -->
+                                                        <!-- Cart Footer Inner Start -->
+                                                        <li class="cart-footer">
+                                                            <ul class="price-content">
+                                                                <li>Subtotal <span id="sub-total"></span></li>
+                                                                <li>Shipping <span>Free</span></li>
+                                                                <li>Taxes <span>0.00</span></li>
+                                                                <li>Total <span id="cart-total"></span></li>
+                                                            </ul>
+                                                            <div class="cart-actions text-center">
+                                                                <a class="cart-checkout"
+                                                                   href="{%url 'checkout' %}">Checkout</a>
                                                             </div>
+                                                        </li>
+                                                        <!-- Cart Footer Inner End -->
+                                                    </ul>
+                                                    <!-- Cart Box End -->
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <li>{% if user_email %}
+                                        <li style="color:white; font-size:10px; margin-left:10px;"> {{ user_email}}!
 
+                                        </li>
 
-                                                            <!-- Single Cart Box End -->
-                                                            <!-- Cart Footer Inner Start -->
-                                                            <li class="cart-footer">
-                                                                <ul class="price-content">
-                                                                    <li>Subtotal <span id="sub-total"></span></li>
-                                                                    <li>Shipping <span>Free</span></li>
-                                                                    <li>Taxes <span>0.00</span></li>
-                                                                    <li>Total <span id="cart-total"></span></li>
-                                                                </ul>
-                                                                <div class="cart-actions text-center">
-                                                                    <a class="cart-checkout"
-                                                                       href="{%url 'checkout' %}">Checkout</a>
-                                                                </div>
-                                                            </li>
-                                                            <!-- Cart Footer Inner End -->
-                                                        </ul>
-                                                        <!-- Cart Box End -->
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <li>{% if user_email %}
-                                            <li style="color:white; font-size:10px; margin-left:10px;"> {{ user_email}}!
-
-                                            </li>
-
-                                            {% endif %}
-                                        </ul>
-                                        <div id="toast"></div>
-                                    </nav><!-- Cart & Search Area End -->
-                                </div>
+                                        {% endif %}
+                                        {% if user.is_authenticated %}
+                                        <li style="margin-left:25px;"><a id="logout-button" href="#">LOGOUT</a></li>
+                                        {% else %}
+                                        <li style="margin-left:15px;"><a href="{% url 'login' %}">LOGIN</a></li>
+                                        {% endif %}
+                                    </ul>
+                                    <div id="toast"></div>
+                                </nav><!-- Cart & Search Area End -->
                             </div>
-                            <!-- Header Menu & Cart Area End Here -->
                         </div>
-                        <!-- Mobile Menu Start -->
+                        <!-- Header Menu & Cart Area End Here -->
+                    </div>
+                    <!-- Mobile Menu Start -->
 
-                        <div class="mobile-menu d-block d-lg-none">
+                    <div class="mobile-menu d-block d-lg-none">
                             <span style="margin-left: auto; margin-bottom: 10px;"><a href="{%url 'checkout' %}"><img
                                     src="{%static 'img/icons/cart.png' %}"
                                     alt="cart-img"></a></span>
 
 
-                            <nav>
+                        <nav>
 
 
-                                <ul>
+                            <ul>
 
-                                    <li><a href="{%url 'home'%}">home</a>
-                                        <!-- Home Version Dropdown Start -->
+                                <li><a href="{%url 'home'%}">home</a>
+                                    <!-- Home Version Dropdown Start -->
 
-                                        <!-- Home Version Dropdown End -->
-                                    </li>
+                                    <!-- Home Version Dropdown End -->
+                                </li>
 
-                                    <li><a href="#">shop</a></li>
-                                    <!-- Mobile Menu Dropdown Start -->
+                                <li><a href="#">shop</a></li>
+                                <!-- Mobile Menu Dropdown Start -->
 
-                                    <!-- Mobile Menu Dropdown End -->
-
-
-                                    <li><a href="#">Contact Us</a></li>
-                                    <li><a href="{%url 'login'%}">login</a></li>
+                                <!-- Mobile Menu Dropdown End -->
 
 
-                                    <!-- Mobile Menu Dropdown Start -->
+                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="{%url 'login'%}">login</a></li>
 
-                                    <!-- Mobile Menu Dropdown End -->
+
+                                <!-- Mobile Menu Dropdown Start -->
+
+                                <!-- Mobile Menu Dropdown End -->
 
 
-                                </ul>
-                            </nav>
-                        </div>
-                        <!-- Mobile Menu End -->
+                            </ul>
+                        </nav>
                     </div>
+                    <!-- Mobile Menu End -->
                 </div>
-                <!-- Container End -->
             </div>
+            <!-- Container End -->
         </div>
-    </header>
+</div>
+</header>
 </div>
 </body>
 <!-- Header Bottom End Here -->
@@ -257,6 +282,7 @@
             <div class="row mt-80">
                 <!-- Single Footer Start Here -->
                 <div class="col-lg-4 col-md-6 col-sm-6">
+
                     <div class="single-footer mb-all-40">
                         <div class="footer-logo mb-30">
                             <a href="{%url 'home'%}"><img src="{%static 'img/logo/logo.png' %}" alt="logo-image"></a>

@@ -65,6 +65,7 @@ INSTALLED_APPS = [
     'app',
     'customadmin',
     'corsheaders',
+    'compressor',
 
 
 ]
