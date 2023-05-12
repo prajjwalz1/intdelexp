@@ -166,7 +166,7 @@ Background variation set
 .mt-140 { margin-top: 140px }
 .mt-150 { margin-top: 150px }
 .mtm-30 { margin-top: -30px }
-.mtm-80 { margin-top: -80px }
+.mtm-80 { margin-top: 300px }
 /*************************
       Margin right
 *************************/
@@ -200,7 +200,7 @@ Background variation set
 .mb-35 { margin-bottom: 35px }
 .mb-40 { margin-bottom: 40px }
 .mb-45 { margin-bottom: 45px }
-.mb-50 { margin-bottom: 50px }
+.mb-50 { margin-bottom: 10px }
 .mb-60 { margin-bottom: 60px }
 .mb-70 { margin-bottom: 70px }
 .mb-80 { margin-bottom: 80px }
