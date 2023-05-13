@@ -65,6 +65,7 @@ INSTALLED_APPS = [
     'app',
     'customadmin',
     'corsheaders',
+    'image_cropping',
 
 
 
@@ -79,6 +80,7 @@ MIDDLEWARE =[
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+'image_cropping.middleware.CroppingMiddleware',
 
 ]
 

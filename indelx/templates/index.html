@@ -120,6 +120,7 @@
 
                     <!-- Deal Product Activaion End -->
                 </div>
+
                 <!-- Container End -->
 
 
@@ -131,16 +132,20 @@
 
                     <h4>Trending {{category.name}} all over the world</h4>
                 </div>
+                
+
+
                 <!-- Section Title End -->
                 <!-- Featured Product Activation Start -->
-                   <div id="featured-pro-active" class="featured-pro-active border-hover-effect owl-carousel">
+                   <div  class="featured-pro-active border-hover-effect owl-carousel">
+
 
                     {%for product in product%}
                         {% if product.category.name == category.name %}
                     <!-- Single Product Start -->
-                    <div class="single-aboss-product">
-                        <div class="pro-img">
-                            <a href="{%url 'productdetails' product.id%}"><img src="{{product.image.url}}"
+                    <div  class="single-aboss-product" >
+                        <div >
+                            <a href="{%url 'productdetails' product.id%}"><img src="{{product.image_thumbnail.url}}"
                                                                                alt="product-img"></a>
                             <span class="sticker-new">new</span>
                             <div class="pro-actions">
