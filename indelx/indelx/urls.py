@@ -19,8 +19,8 @@ from rest_framework.authtoken.views import obtain_auth_token
 
 
 urlpatterns = [
-    path('dj-admin/', admin.site.urls),
-    path('admin/', include('customadmin.urls')),
+    path('admin/', admin.site.urls),
+    path('orders/', include('customadmin.urls')),
     path('', include('app.urls')),
     # path('home/login', include('app.urls')),
 
