@@ -92,7 +92,7 @@ class product_model(models.Model):
     deal = models.BooleanField(default=False)
     deal_date = models.DateTimeField(null=True, blank=True)
     image_thumbnail = models.ImageField(upload_to='projects/thumbnails/', null=True, blank=True)
-    image_cropping = ImageRatioField('image', '350x350')
+    # image_cropping = ImageRatioField('image', '350x350')
 
     def save(self, *args, **kwargs):
         # Open the image using Pillow
@@ -113,7 +113,7 @@ class product_model(models.Model):
         image = image.crop((left, top, right, bottom))
 
         # Resize the cropped image to 350x350 pixels
-        thumb_size = (350, 350)
+        thumb_size = (283, 283)
         image = image.resize(thumb_size, Image.ANTIALIAS)
 
         # Save the thumbnail to a buffer
@@ -250,6 +250,3 @@ class PendingOrder(models.Model):
 
     def __str__(self):
         return f"{self.user.email}'s order for product {self.product_id}"
-class MyModel(models.Model):
-    image = models.ImageField(upload_to='images')
-    image_cropping = ImageRatioField('image', '350x350')

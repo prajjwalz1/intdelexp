@@ -143,8 +143,8 @@
                     {%for product in product%}
                         {% if product.category.name == category.name %}
                     <!-- Single Product Start -->
-                    <div  class="single-aboss-product" >
-                        <div >
+                    <div  class="single-aboss-produc pro-img" >
+                        <div class="pro-img">
                             <a href="{%url 'productdetails' product.id%}"><img src="{{product.image_thumbnail.url}}"
                                                                                alt="product-img"></a>
                             <span class="sticker-new">new</span>
