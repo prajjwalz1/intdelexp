@@ -84,7 +84,11 @@
 
 #toolbar form input {
     border-radius: 4px;
+<<<<<<< HEAD
     font-size: 14px;
+=======
+    font-size: 0.875rem;
+>>>>>>> 2ba6666c1b7e6a1fc378e7ee5cd7957342225e36
     padding: 5px;
     color: var(--body-fg);
 }
@@ -95,7 +99,11 @@
     padding: 2px 5px;
     margin: 0;
     vertical-align: top;
+<<<<<<< HEAD
     font-size: 13px;
+=======
+    font-size: 0.8125rem;
+>>>>>>> 2ba6666c1b7e6a1fc378e7ee5cd7957342225e36
     max-width: 100%;
 }
 
@@ -105,7 +113,11 @@
 
 #toolbar form input[type="submit"] {
     border: 1px solid var(--border-color);
+<<<<<<< HEAD
     font-size: 13px;
+=======
+    font-size: 0.8125rem;
+>>>>>>> 2ba6666c1b7e6a1fc378e7ee5cd7957342225e36
     padding: 4px 8px;
     margin: 0;
     vertical-align: middle;
@@ -140,7 +152,11 @@
 }
 
 #changelist-filter h2 {
+<<<<<<< HEAD
     font-size: 14px;
+=======
+    font-size: 0.875rem;
+>>>>>>> 2ba6666c1b7e6a1fc378e7ee5cd7957342225e36
     text-transform: uppercase;
     letter-spacing: 0.5px;
     padding: 5px 15px;
@@ -148,12 +164,42 @@
     border-bottom: none;
 }
 
+<<<<<<< HEAD
 #changelist-filter h3 {
+=======
+#changelist-filter h3,
+#changelist-filter details summary {
+>>>>>>> 2ba6666c1b7e6a1fc378e7ee5cd7957342225e36
     font-weight: 400;
     padding: 0 15px;
     margin-bottom: 10px;
 }
 
+<<<<<<< HEAD
+=======
+#changelist-filter details summary > * {
+    display: inline;
+}
+
+#changelist-filter details > summary {
+    list-style-type: none;
+}
+
+#changelist-filter details > summary::-webkit-details-marker {
+    display: none;
+}
+
+#changelist-filter details > summary::before {
+    content: '→';
+    font-weight: bold;
+    color: var(--link-hover-color);
+}
+
+#changelist-filter details[open] > summary::before {
+    content: '↓';
+}
+
+>>>>>>> 2ba6666c1b7e6a1fc378e7ee5cd7957342225e36
 #changelist-filter ul {
     margin: 5px 0;
     padding: 0 15px 15px;
@@ -173,8 +219,12 @@
 #changelist-filter a {
     display: block;
     color: var(--body-quiet-color);
+<<<<<<< HEAD
     text-overflow: ellipsis;
     overflow-x: hidden;
+=======
+    word-break: break-word;
+>>>>>>> 2ba6666c1b7e6a1fc378e7ee5cd7957342225e36
 }
 
 #changelist-filter li.selected {
@@ -194,7 +244,11 @@
 }
 
 #changelist-filter #changelist-filter-clear a {
+<<<<<<< HEAD
     font-size: 13px;
+=======
+    font-size: 0.8125rem;
+>>>>>>> 2ba6666c1b7e6a1fc378e7ee5cd7957342225e36
     padding-bottom: 10px;
     border-bottom: 1px solid var(--hairline-color);
 }
@@ -225,6 +279,7 @@
     color: var(--link-hover-color);
 }
 
+<<<<<<< HEAD
 /* PAGINATOR */
 
 .paginator {
@@ -271,6 +326,8 @@
     background: var(--link-hover-color);
 }
 
+=======
+>>>>>>> 2ba6666c1b7e6a1fc378e7ee5cd7957342225e36
 /* ACTIONS */
 
 .filtered .actions {
@@ -296,17 +353,24 @@
     width: 100%;
 }
 
+<<<<<<< HEAD
 #changelist .actions.selected { /* XXX Probably unused? */
     background: var(--body-bg);
     border-top: 1px solid var(--body-bg);
     border-bottom: 1px solid #edecd6;
 }
 
+=======
+>>>>>>> 2ba6666c1b7e6a1fc378e7ee5cd7957342225e36
 #changelist .actions span.all,
 #changelist .actions span.action-counter,
 #changelist .actions span.clear,
 #changelist .actions span.question {
+<<<<<<< HEAD
     font-size: 13px;
+=======
+    font-size: 0.8125rem;
+>>>>>>> 2ba6666c1b7e6a1fc378e7ee5cd7957342225e36
     margin: 0 0.5em;
 }
 
@@ -320,7 +384,11 @@
     color: var(--body-fg);
     border: 1px solid var(--border-color);
     border-radius: 4px;
+<<<<<<< HEAD
     font-size: 14px;
+=======
+    font-size: 0.875rem;
+>>>>>>> 2ba6666c1b7e6a1fc378e7ee5cd7957342225e36
     padding: 0 0 0 4px;
     margin: 0;
     margin-left: 10px;
@@ -333,11 +401,19 @@
 #changelist .actions label {
     display: inline-block;
     vertical-align: middle;
+<<<<<<< HEAD
     font-size: 13px;
 }
 
 #changelist .actions .button {
     font-size: 13px;
+=======
+    font-size: 0.8125rem;
+}
+
+#changelist .actions .button {
+    font-size: 0.8125rem;
+>>>>>>> 2ba6666c1b7e6a1fc378e7ee5cd7957342225e36
     border: 1px solid var(--border-color);
     border-radius: 4px;
     background: var(--body-bg);

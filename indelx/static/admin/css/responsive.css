@@ -14,11 +14,19 @@ input[type="submit"], button {
 
     td, th {
         padding: 10px;
+<<<<<<< HEAD
         font-size: 14px;
     }
 
     .small {
         font-size: 12px;
+=======
+        font-size: 0.875rem;
+    }
+
+    .small {
+        font-size: 0.75rem;
+>>>>>>> 2ba6666c1b7e6a1fc378e7ee5cd7957342225e36
     }
 
     /* Layout */
@@ -28,7 +36,11 @@ input[type="submit"], button {
     }
 
     #content {
+<<<<<<< HEAD
         padding: 20px 30px 30px;
+=======
+        padding: 15px 20px 20px;
+>>>>>>> 2ba6666c1b7e6a1fc378e7ee5cd7957342225e36
     }
 
     div.breadcrumbs {
@@ -45,7 +57,10 @@ input[type="submit"], button {
 
     #branding h1 {
         margin: 0 0 8px;
+<<<<<<< HEAD
         font-size: 20px;
+=======
+>>>>>>> 2ba6666c1b7e6a1fc378e7ee5cd7957342225e36
         line-height: 1.2;
     }
 
@@ -88,7 +103,11 @@ input[type="submit"], button {
     }
 
     td .changelink, td .addlink {
+<<<<<<< HEAD
         font-size: 13px;
+=======
+        font-size: 0.8125rem;
+>>>>>>> 2ba6666c1b7e6a1fc378e7ee5cd7957342225e36
     }
 
     /* Changelist */
@@ -131,10 +150,13 @@ input[type="submit"], button {
         padding: 15px 0;
     }
 
+<<<<<<< HEAD
     #changelist .actions.selected {
         border: none;
     }
 
+=======
+>>>>>>> 2ba6666c1b7e6a1fc378e7ee5cd7957342225e36
     #changelist .actions label {
         display: flex;
     }
@@ -152,7 +174,11 @@ input[type="submit"], button {
     #changelist .actions span.clear,
     #changelist .actions span.question,
     #changelist .actions span.action-counter {
+<<<<<<< HEAD
         font-size: 11px;
+=======
+        font-size: 0.6875rem;
+>>>>>>> 2ba6666c1b7e6a1fc378e7ee5cd7957342225e36
         margin: 0 10px 0 0;
     }
 
@@ -176,7 +202,11 @@ input[type="submit"], button {
     /* Forms */
 
     label {
+<<<<<<< HEAD
         font-size: 14px;
+=======
+        font-size: 0.875rem;
+>>>>>>> 2ba6666c1b7e6a1fc378e7ee5cd7957342225e36
     }
 
     .form-row input[type=text],
@@ -192,7 +222,11 @@ input[type="submit"], button {
         margin: 0;
         padding: 6px 8px;
         min-height: 36px;
+<<<<<<< HEAD
         font-size: 14px;
+=======
+        font-size: 0.875rem;
+>>>>>>> 2ba6666c1b7e6a1fc378e7ee5cd7957342225e36
     }
 
     .form-row select {
@@ -236,6 +270,25 @@ input[type="submit"], button {
         margin-left: 2px;
     }
 
+<<<<<<< HEAD
+=======
+    .submit-row {
+        padding: 8px 8px 3px 8px;
+    }
+
+    .submit-row a.deletelink {
+        padding: 10px 7px;
+    }
+
+    .submit-row input.default {
+        margin: 0 0 5px 5px;
+    }
+
+    .button, input[type=submit], input[type=button], .submit-row input, a.button {
+        padding: 7px;
+    }
+
+>>>>>>> 2ba6666c1b7e6a1fc378e7ee5cd7957342225e36
     /* Related widget */
 
     .related-widget-wrapper {
@@ -393,12 +446,20 @@ input[type="submit"], button {
     }
 
     .datetime span {
+<<<<<<< HEAD
         font-size: 13px;
+=======
+        font-size: 0.8125rem;
+>>>>>>> 2ba6666c1b7e6a1fc378e7ee5cd7957342225e36
     }
 
     .datetime .timezonewarning {
         display: block;
+<<<<<<< HEAD
         font-size: 11px;
+=======
+        font-size: 0.6875rem;
+>>>>>>> 2ba6666c1b7e6a1fc378e7ee5cd7957342225e36
         color: var(--body-quiet-color);
     }
 
@@ -496,7 +557,11 @@ input[type="submit"], button {
 
     #content-related .module h2 {
         padding: 10px 15px;
+<<<<<<< HEAD
         font-size: 16px;
+=======
+        font-size: 1rem;
+>>>>>>> 2ba6666c1b7e6a1fc378e7ee5cd7957342225e36
     }
 
     /* Changelist */
@@ -622,7 +687,11 @@ input[type="submit"], button {
 
     .aligned p.file-upload {
         margin-left: 0;
+<<<<<<< HEAD
         font-size: 13px;
+=======
+        font-size: 0.8125rem;
+>>>>>>> 2ba6666c1b7e6a1fc378e7ee5cd7957342225e36
     }
 
     span.clearable-file-input {
@@ -630,7 +699,11 @@ input[type="submit"], button {
     }
 
     span.clearable-file-input label {
+<<<<<<< HEAD
         font-size: 13px;
+=======
+        font-size: 0.8125rem;
+>>>>>>> 2ba6666c1b7e6a1fc378e7ee5cd7957342225e36
         padding-bottom: 0;
     }
 
@@ -812,7 +885,11 @@ input[type="submit"], button {
     /* Submit row */
 
     .submit-row {
+<<<<<<< HEAD
         padding: 10px 10px 0;
+=======
+        padding: 10px 10px 5px;
+>>>>>>> 2ba6666c1b7e6a1fc378e7ee5cd7957342225e36
         margin: 0 0 15px;
         display: flex;
         flex-direction: column;
@@ -907,7 +984,11 @@ input[type="submit"], button {
     .errornote {
         margin: 0 0 20px;
         padding: 8px 12px;
+<<<<<<< HEAD
         font-size: 13px;
+=======
+        font-size: 0.8125rem;
+>>>>>>> 2ba6666c1b7e6a1fc378e7ee5cd7957342225e36
     }
 
     /* Calendar and clock */
@@ -954,7 +1035,11 @@ input[type="submit"], button {
 
     .calendar-shortcuts {
         padding: 10px 0;
+<<<<<<< HEAD
         font-size: 12px;
+=======
+        font-size: 0.75rem;
+>>>>>>> 2ba6666c1b7e6a1fc378e7ee5cd7957342225e36
         line-height: 12px;
     }
 
@@ -987,7 +1072,11 @@ input[type="submit"], button {
     /* History */
 
     table#change-history tbody th, table#change-history tbody td {
+<<<<<<< HEAD
         font-size: 13px;
+=======
+        font-size: 0.8125rem;
+>>>>>>> 2ba6666c1b7e6a1fc378e7ee5cd7957342225e36
         word-break: break-word;
     }
 
@@ -998,7 +1087,11 @@ input[type="submit"], button {
     /* Docs */
 
     table.model tbody th, table.model tbody td {
+<<<<<<< HEAD
         font-size: 13px;
+=======
+        font-size: 0.8125rem;
+>>>>>>> 2ba6666c1b7e6a1fc378e7ee5cd7957342225e36
         word-break: break-word;
     }
 }

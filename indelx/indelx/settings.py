@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 from django.contrib.auth import authenticate,login
 from pathlib import Path
+import image_cropping
 from django.urls import path
 import os
 import logging
@@ -53,8 +54,8 @@ ALLOWED_HOSTS = ['prajjwalacharya.pythonanywhere.com','www.getfromnepal.com','12
 
 # Application definition
 # from corsheaders.middleware import CorsMiddleware
-INSTALLED_APPS = [
 
+INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -65,10 +66,12 @@ INSTALLED_APPS = [
     'app',
     'customadmin',
     'corsheaders',
-
-
-
+    'image_cropping',
+    # 'easy-thumbnails'
 ]
+
+
+
 
 MIDDLEWARE =[
     'corsheaders.middleware.CorsMiddleware',
@@ -79,6 +82,7 @@ MIDDLEWARE =[
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
 
 ]
 

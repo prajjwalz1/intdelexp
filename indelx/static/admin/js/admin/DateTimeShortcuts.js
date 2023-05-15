@@ -388,6 +388,7 @@
             DateTimeShortcuts.calendars[num].drawNextMonth();
         },
         handleCalendarCallback: function(num) {
+<<<<<<< HEAD
             let format = get_format('DATE_INPUT_FORMATS')[0];
             // the format needs to be escaped a little
             format = format.replace('\\', '\\\\')
@@ -395,6 +396,9 @@
                 .replace('\n', '\\n')
                 .replace('\t', '\\t')
                 .replace("'", "\\'");
+=======
+            const format = get_format('DATE_INPUT_FORMATS')[0];
+>>>>>>> 2ba6666c1b7e6a1fc378e7ee5cd7957342225e36
             return function(y, m, d) {
                 DateTimeShortcuts.calendarInputs[num].value = new Date(y, m - 1, d).strftime(format);
                 DateTimeShortcuts.calendarInputs[num].focus();

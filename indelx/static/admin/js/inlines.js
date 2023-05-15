@@ -88,7 +88,16 @@
             if (options.added) {
                 options.added(row);
             }
+<<<<<<< HEAD
             $(document).trigger('formset:added', [row, options.prefix]);
+=======
+            row.get(0).dispatchEvent(new CustomEvent("formset:added", {
+                bubbles: true,
+                detail: {
+                    formsetName: options.prefix
+                }
+            }));
+>>>>>>> 2ba6666c1b7e6a1fc378e7ee5cd7957342225e36
         };
 
         /**
@@ -130,7 +139,15 @@
             if (options.removed) {
                 options.removed(row);
             }
+<<<<<<< HEAD
             $(document).trigger('formset:removed', [row, options.prefix]);
+=======
+            document.dispatchEvent(new CustomEvent("formset:removed", {
+                detail: {
+                    formsetName: options.prefix
+                }
+            }));
+>>>>>>> 2ba6666c1b7e6a1fc378e7ee5cd7957342225e36
             // Update the TOTAL_FORMS form count.
             const forms = $("." + options.formCssClass);
             $("#id_" + options.prefix + "-TOTAL_FORMS").val(forms.length);
@@ -296,7 +313,17 @@
                     dependency_list = input.data('dependency_list') || [],
                     dependencies = [];
                 $.each(dependency_list, function(i, field_name) {
+<<<<<<< HEAD
                     dependencies.push('#' + row.find('.form-row .field-' + field_name).find('input, select, textarea').attr('id'));
+=======
+                    // Dependency in a fieldset.
+                    let field_element = row.find('.form-row .field-' + field_name);
+                    // Dependency without a fieldset.
+                    if (!field_element.length) {
+                        field_element = row.find('.form-row.field-' + field_name);
+                    }
+                    dependencies.push('#' + field_element.find('input, select, textarea').attr('id'));
+>>>>>>> 2ba6666c1b7e6a1fc378e7ee5cd7957342225e36
                 });
                 if (dependencies.length) {
                     input.prepopulate(dependencies, input.attr('maxlength'));

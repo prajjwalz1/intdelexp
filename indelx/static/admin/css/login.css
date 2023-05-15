@@ -12,7 +12,11 @@
 }
 
 .login #header h1 {
+<<<<<<< HEAD
     font-size: 18px;
+=======
+    font-size: 1.125rem;
+>>>>>>> 2ba6666c1b7e6a1fc378e7ee5cd7957342225e36
     margin: 0;
 }
 
