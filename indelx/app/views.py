@@ -32,6 +32,13 @@ def productapi(request):
     decoded_data = json.loads(json_data)
     return JsonResponse(decoded_data, safe=False)
 
+def productapiid(request,id):
+
+    products = product_model.objects.filter(id=id)
+    serializer = Productserializer(products, many=True)
+    json_data = json.dumps(serializer.data, ensure_ascii=False)
+    decoded_data = json.loads(json_data)
+    return JsonResponse(decoded_data, safe=False)
 
 @ensure_csrf_cookie
 def home(request):

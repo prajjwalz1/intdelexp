@@ -17,6 +17,7 @@ urlpatterns = [
     path('quickview/<int:product_id>/', views.quickview, name='product_details'),
     path('productdetails/<int:product_id>',views.productdetails,name='productdetails'),
     path('productapi/',views.productapi,name='productapi'),
+    path('productapi/<int:id>',views.productapiid,name='productapi'),
     # path('cart/<int:id>',views.Cart, name='cart'),
     # path('add-to-cart/<int:product_id>', views.update_cart, name='add_to_cart'),
     path('checkout/',views.checkout,name='checkout'),
