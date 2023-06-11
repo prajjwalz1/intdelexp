@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.http import JsonResponse,HttpResponse
 from.models import slide,featbanner,product_model,CartItem,Customer,Order,OrderItem,PendingOrder,product_category
-from.serializers import productserializer
+from.serializers import Productserializer
 from rest_framework.renderers import JSONRenderer
 
 
@@ -25,8 +25,9 @@ def get_token(request):
     return csrf_token
 import json
 def productapi(request):
+
     products = product_model.objects.all()
-    serializer = productserializer(products, many=True)
+    serializer = Productserializer(products, many=True)
     json_data = json.dumps(serializer.data, ensure_ascii=False)
     decoded_data = json.loads(json_data)
     return JsonResponse(decoded_data, safe=False)
@@ -363,7 +364,7 @@ def esewa(request):
             'tAmt':total_price,
             'pid': order_id,
             'scd': 'EPAYTEST',
-            'su': 'http://prajjwalacharya.pythonanywhere.com/payment/success',
+            'su': 'http://localhost:8000/payment/success',
             'fu': 'http://localhost:8000/payment/failure',
         }
 

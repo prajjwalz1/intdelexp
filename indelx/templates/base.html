@@ -215,11 +215,25 @@
                                         </li>
 
                                         {% endif %}
-                                        {% if user.is_authenticated %}
-                                        <li style="margin-left:25px;"><a id="logout-button" href="#">LOGOUT</a></li>
-                                        {% else %}
-                                        <li style="margin-left:15px;"><a href="{% url 'login' %}">LOGIN</a></li>
-                                        {% endif %}
+                                        <li>
+                                            <span><i class="fa fa-user" style="margin-left:10px;"  aria-hidden="true"></i></span>
+                                            <span style="margin-left: 10px; ">
+                                              {% if user.is_authenticated %}
+                                                <a style="font-size:10px; color:#000000;" id="logout-button" href="#">Logout</a></span>
+                                              {% else %}
+                                                <span><a style="font-size:10px; color:#000000;" href="{% url 'login' %}">Login</a></span>
+                                              {% endif %}
+                                            </span>
+                                          </i>
+                                        </li>
+
+<!--                                        {% if user.is_authenticated %}-->
+<!--                                        <li><i class="fa fa-user" aria-hidden="true"><span  style="margin-left:25px;"></span> </i></li>-->
+
+<!--&lt;!&ndash;                                        <li style="margin-left:25px;"><a id="logout-button" href="#">LOGOUT</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        {% else %}&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <li style="margin-left:15px;"><a href="{% url 'login' %}">LOGIN</a></li>&ndash;&gt;-->
+<!--                                        {% endif %}-->
                                     </ul>
                                     <div id="toast"></div>
                                 </nav><!-- Cart & Search Area End -->
@@ -269,8 +283,9 @@
             </div>
             <!-- Container End -->
         </div>
+        </header>
 </div>
-</header>
+
 </div>
 </body>
 <!-- Header Bottom End Here -->
