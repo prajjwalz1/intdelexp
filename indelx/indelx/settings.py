@@ -66,15 +66,6 @@ INSTALLED_APPS = [
     'app',
     'customadmin',
     'corsheaders',
-<<<<<<< HEAD
-
-    
-]
-TAILWIND_APP_NAME = 'theme'
-INTERNAL_IPS = [
-    "127.0.0.1",
-]
-=======
     'image_cropping',
     # 'easy-thumbnails'
 ]
@@ -82,7 +73,6 @@ INTERNAL_IPS = [
 
 
 
->>>>>>> df22ae686e99b07c792dcc525e27e6f42b972813
 MIDDLEWARE =[
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
