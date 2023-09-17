@@ -6,8 +6,8 @@
 <br>
 
 <br>
-<section style="background-color: #eee;">
-    <div class="container py-5">
+
+    <div class="container">
         {%for products in matching_products%}
         <div class="row justify-content-center mb-3">
             <div class="col-md-12 col-xl-10">
@@ -64,9 +64,9 @@
                                     <span class="text-danger"><s>{{products.selling_price}}</s></span>
                                 </div>
                                 <h6 class="text-success">Free shipping</h6>
-                                <div class="d-flex flex-column mt-4">
-                                    <button class="btn btn-primary btn-sm" type="button">Details</button>
-                                    <button class="btn btn-outline-primary btn-sm mt-2" type="button">
+                                <div  class="d-flex flex-column mt-4" >
+                                    <a style="background-color: #16bdbd;" href="{%url 'productdetails' products.id%}" class="btn btn-primary btn-sm" type="button">Details</a>
+                                    <button style="background-color: #16bdbd;" class="btn btn-outline-primary btn-sm mt-2" type="button">
                                         Add to wishlist
                                     </button>
                                 </div>
@@ -79,11 +79,7 @@
         {%endfor%}
 
     </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-</section>
+
+
 </body>
 {%endblock%}

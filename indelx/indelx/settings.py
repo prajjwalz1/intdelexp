@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 from django.contrib.auth import authenticate,login
 from pathlib import Path
+
 from django.urls import path
 import os
 import logging
@@ -53,8 +54,8 @@ ALLOWED_HOSTS = ['prajjwalacharya.pythonanywhere.com','www.getfromnepal.com','12
 
 # Application definition
 # from corsheaders.middleware import CorsMiddleware
-INSTALLED_APPS = [
 
+INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -65,6 +66,7 @@ INSTALLED_APPS = [
     'app',
     'customadmin',
     'corsheaders',
+<<<<<<< HEAD
 
     
 ]
@@ -72,6 +74,15 @@ TAILWIND_APP_NAME = 'theme'
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
+=======
+    'image_cropping',
+    # 'easy-thumbnails'
+]
+
+
+
+
+>>>>>>> df22ae686e99b07c792dcc525e27e6f42b972813
 MIDDLEWARE =[
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -81,6 +92,7 @@ MIDDLEWARE =[
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
 
 ]
 
@@ -109,11 +121,17 @@ WSGI_APPLICATION = 'indelx.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# To use Neon with Django, you have to create a Project on Neon and specify the project connection settings in your settings.py in the same way as for standalone Postgres.
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': str(os.path.join(BASE_DIR, "db.sqlite3"))
-    }
+  'default': {
+    'ENGINE': 'django.db.backends.postgresql',
+    'NAME': 'neondb',
+    'USER': 'prajjwalz1',
+    'PASSWORD': 'BqV02NfmlUHP',
+    'HOST': 'ep-hidden-night-13238012.ap-southeast-1.aws.neon.tech',
+    'PORT': '5432',
+  }
 }
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,

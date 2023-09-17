@@ -1,2 +1,3 @@
 # intdelexp
-This repository is of international delivery express nepal .
+The site is live at www.getfromnepal.com
+i have attached the dependencies in requirements.txt if you need

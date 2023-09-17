@@ -5,7 +5,9 @@
 
     <!-- Main Header Area End Here -->
     <!-- Slider Area Start Here -->
+
     <div class="slider-activation owl-carousel">
+
         <!-- Start Single Slide -->
         <div style="background-image: url('{{ slide.0.image.url }}');" class="slide align-center-left fullscreen animation-style-01 bg-image-1 ">
             <div class="slider-progress"></div>
@@ -118,27 +120,32 @@
 
                     <!-- Deal Product Activaion End -->
                 </div>
+
                 <!-- Container End -->
 
 
                 <br>
                 <h3 class="section-title text-center">featured products</h3>
                 {%for category in category%}
-                <br>
+
                 <div class="section-title text-center mb-50">
 
                     <h4>Trending {{category.name}} all over the world</h4>
                 </div>
+                
+
+
                 <!-- Section Title End -->
                 <!-- Featured Product Activation Start -->
-                   <div id="featured-pro-active" class="featured-pro-active border-hover-effect owl-carousel">
+                   <div  class="featured-pro-active border-hover-effect owl-carousel">
+
 
                     {%for product in product%}
                         {% if product.category.name == category.name %}
                     <!-- Single Product Start -->
-                    <div class="single-aboss-product">
+                    <div  class="single-aboss-product pro-img" >
                         <div class="pro-img">
-                            <a href="{%url 'productdetails' product.id%}"><img src="{{product.image.url}}"
+                            <a href="{%url 'productdetails' product.id%}"><img src="{{product.image_thumbnail.url}}"
                                                                                alt="product-img"></a>
                             <span class="sticker-new">new</span>
                             <div class="pro-actions">
@@ -170,7 +177,7 @@
                        {%endif%}
                     {%endfor%}
                 </div>
-                <br>
+
                 {%endfor%}
 
 
