@@ -111,11 +111,17 @@ WSGI_APPLICATION = 'indelx.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# To use Neon with Django, you have to create a Project on Neon and specify the project connection settings in your settings.py in the same way as for standalone Postgres.
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': str(os.path.join(BASE_DIR, "db.sqlite3"))
-    }
+  'default': {
+    'ENGINE': 'django.db.backends.postgresql',
+    'NAME': 'neondb',
+    'USER': 'prajjwalz1',
+    'PASSWORD': 'BqV02NfmlUHP',
+    'HOST': 'ep-hidden-night-13238012.ap-southeast-1.aws.neon.tech',
+    'PORT': '5432',
+  }
 }
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
