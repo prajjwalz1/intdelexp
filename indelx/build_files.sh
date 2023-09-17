@@ -10,5 +10,5 @@
 
  # Collect static files
 echo "Collecting static files..."
-python manage.py collectstatic
-yes
+echo yes | python manage.py collectstatic
+
