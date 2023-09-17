@@ -200,7 +200,7 @@ def login_view(request):
             return render('login.html', {'messages': error})
     else:
         return render(request, 'login.html')
-
+@csrf_exempt
 def register_view(request):
     if request.method == 'POST':
 
