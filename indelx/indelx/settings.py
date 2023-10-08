@@ -105,7 +105,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'indelx.wsgi.application'
+WSGI_APPLICATION = 'indelx.wsgi.app'
 
 
 # Database
